@@ -153,6 +153,7 @@
     padding: 120px 40px 80px;
     text-align: center;
     position: relative;
+    gap: 0;
   }
 
   /* Radial glow behind hero content */
@@ -288,13 +289,13 @@
   }
 
   .hero-stat-strip {
-    position: absolute;
-    bottom: 48px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     display: flex;
     gap: 48px;
+    margin-top: 56px;
     animation: fadeUp 1s 0.6s ease both;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .stat {
@@ -887,9 +888,6 @@
 
     /* Stat strip: 2×2 grid instead of horizontal row */
     .hero-stat-strip {
-      position: relative;
-      bottom: auto; left: auto;
-      transform: none;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2px;
@@ -1125,18 +1123,18 @@
   </p>
 
   <!-- Main screenshot -->
-  <div style="position:relative; border:1px solid var(--border); overflow:hidden; margin-bottom:2px;">
+  <div style="position:relative; border:1px solid var(--border); overflow:hidden; margin-bottom:2px; max-width:480px;">
     <img src="screenshot.png" alt="Koniscope Analysis Screenshot showing 16,867 fibers detected across 7 tiles with full statistics dashboard"
          style="width:100%; display:block; image-rendering:auto;"/>
     <!-- Overlay badge -->
-    <div style="position:absolute; top:20px; right:20px; background:rgba(6,13,30,0.92); border:1px solid var(--cyan); padding:12px 20px; backdrop-filter:blur(8px);">
-      <div style="font-family:'Orbitron',sans-serif; font-size:22px; font-weight:900; color:var(--cyan); line-height:1;">16,867</div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.12em; color:var(--text2); margin-top:4px;">FIBERS DETECTED</div>
+    <div style="position:absolute; top:10px; right:10px; background:rgba(6,13,30,0.92); border:1px solid var(--cyan); padding:7px 12px; backdrop-filter:blur(8px);">
+      <div style="font-family:'Orbitron',sans-serif; font-size:14px; font-weight:900; color:var(--cyan); line-height:1;">16,867</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:0.12em; color:var(--text2); margin-top:3px;">FIBERS DETECTED</div>
     </div>
   </div>
 
   <!-- Stats strip pulled from screenshot -->
-  <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:2px; background:var(--border); border:1px solid var(--border); border-top:none;" class="stats-grid-6">
+  <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:2px; background:var(--border); border:1px solid var(--border); border-top:none; max-width:480px;" class="stats-grid-6">
     <div style="background:var(--card2); padding:20px 16px; text-align:center;">
       <div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">16,867</div>
       <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Total Fibers</div>
@@ -1164,7 +1162,7 @@
   </div>
 
   <!-- Caption -->
-  <p style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text2); letter-spacing:0.08em; margin-top:14px; text-align:center;">
+  <p style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text2); letter-spacing:0.08em; margin-top:14px; text-align:left; max-width:480px;">
     Sample: UME_MEC22084_Peduncle_Muscle.svs &nbsp;·&nbsp; H&amp;E (Standard) &nbsp;·&nbsp; Scale 0.5 µm/px (20× equivalent) &nbsp;·&nbsp; 7 tiles processed in parallel
   </p>
 </section>
