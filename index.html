@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Koniscope — Muscle Fiber Analysis Suite</title>
+<title>KONISCOPE — Muscle Fiber Analysis Suite</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -963,8 +963,22 @@
 
   <!-- Main screenshot -->
   <div style="position:relative; border:1px solid var(--border); overflow:hidden; margin-bottom:2px;">
-    <img src="screenshot.png" alt="Koniscope Analysis Screenshot showing 16,867 fibers detected across 7 tiles with full statistics dashboard"
-         style="width:100%; display:block; image-rendering:auto;"/>
+    <div style="width:100%; background:var(--card2); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 40px; border:1px solid var(--border); gap:24px;">
+    <svg width="120" height="120" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.6;">
+      <circle cx="100" cy="100" r="96" fill="#0A1428" stroke="#3AC4E8" stroke-width="2"/>
+      <circle cx="100" cy="100" r="74" stroke="#3AC4E8" stroke-width="1" opacity="0.3"/>
+      <polygon points="100,56 122,66 128,88 118,108 96,112 76,102 70,80 82,62" fill="#3090DC" fill-opacity="0.8" stroke="#60C0F0" stroke-width="1.5"/>
+      <polygon points="52,58 72,50 84,62 80,80 62,84 46,74" fill="#2AB8C8" fill-opacity="0.75" stroke="#4AD8E8" stroke-width="1.2"/>
+      <polygon points="128,62 148,56 158,70 152,88 134,90 122,76" fill="#2090C0" fill-opacity="0.75" stroke="#40B8E0" stroke-width="1.2"/>
+      <polygon points="44,116 64,108 78,120 74,140 52,146 36,132" fill="#28A8B8" fill-opacity="0.75" stroke="#48CCE0" stroke-width="1.2"/>
+      <polygon points="126,116 148,112 158,128 150,146 128,150 112,138" fill="#2AC8B0" fill-opacity="0.75" stroke="#4AE8D0" stroke-width="1.2"/>
+      <text x="100" y="108" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="26" font-weight="700" fill="white" opacity="0.9">K</text>
+    </svg>
+    <div style="font-family:'Orbitron',sans-serif; font-size:13px; letter-spacing:0.12em; color:var(--cyan); text-transform:uppercase;">Analysis Screenshot</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text2); letter-spacing:0.08em; text-align:center; max-width:480px; line-height:1.7;">
+      Place <span style="color:var(--cyan);">screenshot.png</span> in the same folder as this HTML file to display your actual analysis output here.<br/>16,867 fibers · H&amp;E Standard · 7 tiles
+    </div>
+  </div>
     <!-- Overlay badge -->
     <div style="position:absolute; top:20px; right:20px; background:rgba(6,13,30,0.92); border:1px solid var(--cyan); padding:12px 20px; backdrop-filter:blur(8px);">
       <div style="font-family:'Orbitron',sans-serif; font-size:22px; font-weight:900; color:var(--cyan); line-height:1;">16,867</div>
@@ -1381,7 +1395,7 @@
 <div id="contact" class="contact-section reveal">
   <h2>Contact &amp; Licensing</h2>
   <p>Questions, bug reports, licensing inquiries, and research collaborations:</p>
-  <a class="contact-email" href="/cdn-cgi/l/email-protection#8beceaf1e0e4e5e2eaf9e2f8cbe2e8e7e4feefa5e8e4e6"><span class="__cf_email__" data-cfemail="0661677c6d69686f67746f75466f656a6973622865696b">[email&#160;protected]</span></a>
+  <a class="contact-email" href="mailto:koniscope@gmail.com">koniscope@gmail.com</a>
 </div>
 
 <!-- ── Footer ── -->
@@ -1393,7 +1407,7 @@
 
 </div><!-- .wrap -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
@@ -1411,4 +1425,17 @@
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEac
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.style.color = '';
+      if (link.getAttribute('href') === '#' + current) {
+        link.style.color = 'var(--cyan)';
+      }
+    });
+  });
+</script>
