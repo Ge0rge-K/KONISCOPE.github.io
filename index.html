@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>KONISCOPE — Muscle Fiber Analysis Suite</title>
+<title>Koniscope — Muscle Fiber Analysis Suite</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -809,19 +809,170 @@
     transform: translateY(0);
   }
 
-  /* ── Responsive ── */
+  /* ── Hamburger button (hidden on desktop) ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 6px;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--cyan);
+    border-radius: 1px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile menu drawer */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: rgba(6,13,30,0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    z-index: 99;
+    flex-direction: column;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    display: block;
+    padding: 16px 24px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--text2);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(58,196,232,0.07);
+    transition: color 0.2s, background 0.2s;
+  }
+  .mobile-nav a:hover { color: var(--cyan); background: rgba(58,196,232,0.04); }
+  .mobile-nav a:last-child { border-bottom: none; }
+
+  /* ── Large desktop 1280px+ ── */
+  @media (min-width: 1280px) {
+    section, .algo-section, .formats-section, .stains-section,
+    .usecase-section, .license-section { padding: 100px 40px; }
+  }
+
+  /* ── Tablet landscape / small desktop  1024px ── */
+  @media (max-width: 1024px) {
+    section, .algo-section, .formats-section, .stains-section,
+    .usecase-section, .license-section { padding: 80px 32px; }
+    .step-content h4 { min-width: 160px; }
+    .usecase-meta { gap: 28px; }
+    .usecase-card { padding: 48px 40px; }
+    .license-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ── Tablet portrait  768px ── */
   @media (max-width: 768px) {
     nav { padding: 0 20px; }
     .nav-links { display: none; }
-    section { padding: 60px 20px; }
+    .nav-hamburger { display: flex; }
+
+    section, .algo-section, .formats-section, .stains-section,
+    .usecase-section, .license-section { padding: 64px 20px; }
+
+    .hero { padding: 100px 20px 100px; }
+    .logo-ring { width: 140px; height: 140px; }
+
+    /* Stat strip: 2×2 grid instead of horizontal row */
+    .hero-stat-strip {
+      position: relative;
+      bottom: auto; left: auto;
+      transform: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      width: 100%;
+      margin-top: 40px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      animation: fadeUp 1s 0.6s ease both;
+    }
+    .stat {
+      background: var(--card);
+      padding: 20px 16px;
+    }
+    .stat-divider { display: none; }
+    .stat-num { font-size: 24px; }
+
     .app-grid { grid-template-columns: 1fr; }
+    .app-card { padding: 32px 24px; }
+
+    .pipeline-step { grid-template-columns: 52px 1fr; gap: 0 12px; }
+    .step-content { padding: 20px 16px; flex-direction: column; align-items: flex-start; gap: 10px; }
+    .step-content h4 { min-width: unset; }
+    .step-tag { margin-left: 0; }
+
     .format-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Stain table: horizontal scroll wrapper */
+    .stain-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .stain-table { min-width: 520px; }
+
+    .usecase-card { padding: 32px 20px; }
+    .usecase-quote { font-size: 15px; }
+    .usecase-meta { flex-direction: column; gap: 20px; }
+
     .license-grid { grid-template-columns: 1fr; }
-    .hero-stat-strip { gap: 24px; }
-    .usecase-card { padding: 36px 28px; }
-    .step-tag { display: none; }
-    footer { flex-direction: column; gap: 12px; text-align: center; }
-    .pipeline-step { grid-template-columns: 52px 1fr; }
+
+    .contact-section { padding: 60px 20px 48px; }
+
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 20px; }
+
+    /* Inline grids inside SVS section */
+    .svs-grid-3 { grid-template-columns: 1fr !important; }
+    .svs-grid-5 { grid-template-columns: repeat(2, 1fr) !important; }
+    .stats-grid-6 { grid-template-columns: repeat(3, 1fr) !important; }
+  }
+
+  /* ── Mobile  480px ── */
+  @media (max-width: 480px) {
+    nav { padding: 0 16px; }
+
+    section, .algo-section, .formats-section, .stains-section,
+    .usecase-section, .license-section { padding: 52px 16px; }
+
+    .hero { padding: 90px 16px 90px; }
+    .logo-ring { width: 110px; height: 110px; margin-bottom: 24px; }
+    .hero-badge { font-size: 10px; letter-spacing: 0.14em; }
+    .hero-sub { font-size: 13px; letter-spacing: 0.08em; }
+    .hero-desc { font-size: 15px; }
+    .hero-buttons { flex-direction: column; align-items: stretch; }
+    .btn-primary, .btn-secondary { justify-content: center; text-align: center; }
+
+    .stat-num { font-size: 20px; }
+
+    .pipeline-step { grid-template-columns: 44px 1fr; }
+    .step-num { font-size: 16px; padding: 16px 0; }
+
+    .format-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .svs-grid-3 { grid-template-columns: 1fr !important; }
+    .svs-grid-5 { grid-template-columns: 1fr 1fr !important; }
+    .stats-grid-6 { grid-template-columns: repeat(2, 1fr) !important; }
+
+    .usecase-meta { gap: 16px; }
+    .contact-section { padding: 48px 16px 36px; }
+    footer { padding: 20px 16px; }
+  }
+
+  /* ── Small phones  360px ── */
+  @media (max-width: 360px) {
+    .hero-title { font-size: 42px; }
+    .stats-grid-6 { grid-template-columns: repeat(2, 1fr) !important; }
+    .svs-grid-5 { grid-template-columns: 1fr !important; }
+    .format-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -843,6 +994,18 @@
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#application">Application</a>
+  <a href="#algorithm">Algorithm</a>
+  <a href="#svs">SVS Parsing</a>
+  <a href="#formats">Formats</a>
+  <a href="#stains">Stains</a>
+  <a href="#license">License</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <!-- ── Hero ── -->
@@ -920,10 +1083,10 @@
   </p>
 
   <div class="hero-buttons">
-    <a class="btn-primary" href="https://github.com/YOUR_USERNAME/koniscope/releases" target="_blank">
+    <a class="btn-primary" href="https://www.dropbox.com/scl/fi/wfucwp1fl1n2uvhq41cv5/Koniscope.zip?rlkey=m4qolw4wbjggpilsuhhbtlzma&st=58vje9fp&dl=1" target="_blank">
       ↓ &nbsp;Download
     </a>
-    <a class="btn-secondary" href="https://github.com/YOUR_USERNAME/koniscope" target="_blank">
+    <a class="btn-secondary" href="https://github.com/Ge0rge-K" target="_blank">
       ⬡ &nbsp;View on GitHub
     </a>
   </div>
@@ -963,22 +1126,8 @@
 
   <!-- Main screenshot -->
   <div style="position:relative; border:1px solid var(--border); overflow:hidden; margin-bottom:2px;">
-    <div style="width:100%; background:var(--card2); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 40px; border:1px solid var(--border); gap:24px;">
-    <svg width="120" height="120" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.6;">
-      <circle cx="100" cy="100" r="96" fill="#0A1428" stroke="#3AC4E8" stroke-width="2"/>
-      <circle cx="100" cy="100" r="74" stroke="#3AC4E8" stroke-width="1" opacity="0.3"/>
-      <polygon points="100,56 122,66 128,88 118,108 96,112 76,102 70,80 82,62" fill="#3090DC" fill-opacity="0.8" stroke="#60C0F0" stroke-width="1.5"/>
-      <polygon points="52,58 72,50 84,62 80,80 62,84 46,74" fill="#2AB8C8" fill-opacity="0.75" stroke="#4AD8E8" stroke-width="1.2"/>
-      <polygon points="128,62 148,56 158,70 152,88 134,90 122,76" fill="#2090C0" fill-opacity="0.75" stroke="#40B8E0" stroke-width="1.2"/>
-      <polygon points="44,116 64,108 78,120 74,140 52,146 36,132" fill="#28A8B8" fill-opacity="0.75" stroke="#48CCE0" stroke-width="1.2"/>
-      <polygon points="126,116 148,112 158,128 150,146 128,150 112,138" fill="#2AC8B0" fill-opacity="0.75" stroke="#4AE8D0" stroke-width="1.2"/>
-      <text x="100" y="108" text-anchor="middle" font-family="Orbitron,sans-serif" font-size="26" font-weight="700" fill="white" opacity="0.9">K</text>
-    </svg>
-    <div style="font-family:'Orbitron',sans-serif; font-size:13px; letter-spacing:0.12em; color:var(--cyan); text-transform:uppercase;">Analysis Screenshot</div>
-    <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text2); letter-spacing:0.08em; text-align:center; max-width:480px; line-height:1.7;">
-      Place <span style="color:var(--cyan);">screenshot.png</span> in the same folder as this HTML file to display your actual analysis output here.<br/>16,867 fibers · H&amp;E Standard · 7 tiles
-    </div>
-  </div>
+    <img src="screenshot.png" alt="Koniscope Analysis Screenshot showing 16,867 fibers detected across 7 tiles with full statistics dashboard"
+         style="width:100%; display:block; image-rendering:auto;"/>
     <!-- Overlay badge -->
     <div style="position:absolute; top:20px; right:20px; background:rgba(6,13,30,0.92); border:1px solid var(--cyan); padding:12px 20px; backdrop-filter:blur(8px);">
       <div style="font-family:'Orbitron',sans-serif; font-size:22px; font-weight:900; color:var(--cyan); line-height:1;">16,867</div>
@@ -987,7 +1136,7 @@
   </div>
 
   <!-- Stats strip pulled from screenshot -->
-  <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:2px; background:var(--border); border:1px solid var(--border); border-top:none;">
+  <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:2px; background:var(--border); border:1px solid var(--border); border-top:none;" class="stats-grid-6">
     <div style="background:var(--card2); padding:20px 16px; text-align:center;">
       <div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">16,867</div>
       <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Total Fibers</div>
@@ -1160,7 +1309,7 @@
     after pressing Run.
   </p>
 
-  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; background:var(--border); border:1px solid var(--border); margin-top:60px;">
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; background:var(--border); border:1px solid var(--border); margin-top:60px;" class="svs-grid-3">
 
     <div style="background:var(--card); padding:40px 32px; position:relative; overflow:hidden;">
       <div style="font-family:'Orbitron',sans-serif; font-size:48px; font-weight:900; color:var(--cyan); line-height:1; margin-bottom:16px; text-shadow:0 0 30px rgba(58,196,232,0.4);">16K+</div>
@@ -1185,7 +1334,7 @@
   <!-- SVS pipeline detail -->
   <div style="margin-top:2px; background:var(--card); border:1px solid var(--border); border-top:none; padding:40px 48px;">
     <div style="font-family:'Orbitron',sans-serif; font-size:13px; letter-spacing:0.06em; color:var(--cyan); margin-bottom:24px; text-transform:uppercase;">How SVS Auto-Parsing Works</div>
-    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0; background:var(--border);">
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0; background:var(--border);" class="svs-grid-5">
 
       <div style="background:var(--card2); padding:24px 20px; text-align:center;">
         <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">①</div>
@@ -1282,6 +1431,7 @@
   <h2 class="section-title">7 stain <span>profiles</span></h2>
   <p class="section-body">Each profile applies the correct color-space strategy for that staining protocol. Select from the dropdown — no manual threshold tuning needed.</p>
 
+  <div class="stain-table-scroll">
   <table class="stain-table">
     <thead>
       <tr>
@@ -1328,6 +1478,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
 </section>
 
 <div class="full-divider"></div>
@@ -1419,6 +1570,21 @@
     });
   }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
+
+  // Hamburger menu
+  const hamburger = document.getElementById('navHamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  // Close mobile nav on link click
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
 
   // Nav highlight on scroll
   const sections = document.querySelectorAll('section[id], div[id]');
