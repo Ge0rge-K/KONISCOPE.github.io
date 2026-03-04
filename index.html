@@ -156,7 +156,6 @@
     gap: 0;
   }
 
-  /* Radial glow behind hero content */
   .hero-glow {
     position: absolute;
     width: 700px; height: 700px;
@@ -167,7 +166,6 @@
     pointer-events: none;
   }
 
-  /* Logo ring */
   .logo-ring {
     position: relative;
     width: 180px; height: 180px;
@@ -180,9 +178,7 @@
     50%       { filter: drop-shadow(0 0 36px rgba(58,196,232,0.9)); }
   }
 
-  .logo-ring svg {
-    width: 100%; height: 100%;
-  }
+  .logo-ring svg { width: 100%; height: 100%; }
 
   .hero-badge {
     font-family: 'JetBrains Mono', monospace;
@@ -298,9 +294,7 @@
     justify-content: center;
   }
 
-  .stat {
-    text-align: center;
-  }
+  .stat { text-align: center; }
   .stat-num {
     font-family: 'Orbitron', sans-serif;
     font-size: 28px;
@@ -355,7 +349,6 @@
     margin-bottom: 20px;
     line-height: 1.1;
   }
-
   .section-title span { color: var(--cyan); }
 
   .section-body {
@@ -428,10 +421,7 @@
     padding: 100px 40px;
   }
 
-  .algo-pipeline {
-    margin-top: 60px;
-    position: relative;
-  }
+  .algo-pipeline { margin-top: 60px; position: relative; }
 
   .pipeline-step {
     display: grid;
@@ -456,10 +446,7 @@
     position: relative;
     transition: background 0.3s;
   }
-
-  .pipeline-step:hover .step-num {
-    background: rgba(58,196,232,0.12);
-  }
+  .pipeline-step:hover .step-num { background: rgba(58,196,232,0.12); }
 
   .step-content {
     background: var(--card);
@@ -571,9 +558,7 @@
     border: 1px solid var(--border);
   }
 
-  .stain-table thead {
-    background: var(--card2);
-  }
+  .stain-table thead { background: var(--card2); }
 
   .stain-table th {
     padding: 16px 24px;
@@ -594,18 +579,9 @@
   }
 
   .stain-table tr:last-child td { border-bottom: none; }
-
-  .stain-table tbody tr {
-    transition: background 0.2s;
-  }
-  .stain-table tbody tr:hover {
-    background: rgba(58,196,232,0.04);
-  }
-
-  .stain-table td:first-child {
-    color: var(--white);
-    font-weight: 400;
-  }
+  .stain-table tbody tr { transition: background 0.2s; }
+  .stain-table tbody tr:hover { background: rgba(58,196,232,0.04); }
+  .stain-table td:first-child { color: var(--white); font-weight: 400; }
 
   .mode-tag {
     display: inline-block;
@@ -652,16 +628,9 @@
     font-weight: 300;
   }
 
-  .usecase-meta {
-    display: flex;
-    gap: 48px;
-    flex-wrap: wrap;
-  }
+  .usecase-meta { display: flex; gap: 48px; flex-wrap: wrap; }
 
-  .meta-item {
-    border-left: 2px solid var(--cyan);
-    padding-left: 20px;
-  }
+  .meta-item { border-left: 2px solid var(--cyan); padding-left: 20px; }
 
   .meta-label {
     font-family: 'JetBrains Mono', monospace;
@@ -672,11 +641,7 @@
     margin-bottom: 6px;
   }
 
-  .meta-value {
-    font-size: 14px;
-    color: var(--white);
-    font-weight: 400;
-  }
+  .meta-value { font-size: 14px; color: var(--white); font-weight: 400; }
 
   /* ── License section ── */
   .license-section {
@@ -694,10 +659,7 @@
     margin-top: 60px;
   }
 
-  .license-card {
-    background: var(--card);
-    padding: 40px 32px;
-  }
+  .license-card { background: var(--card); padding: 40px 32px; }
 
   .license-card h3 {
     font-family: 'Orbitron', sans-serif;
@@ -708,17 +670,90 @@
     text-transform: uppercase;
   }
 
-  .license-card p {
-    font-size: 14px;
-    line-height: 1.75;
-    color: var(--text2);
+  .license-card p { font-size: 14px; line-height: 1.75; color: var(--text2); }
+  .license-card .icon { font-size: 28px; margin-bottom: 20px; display: block; }
+
+  /* ── Pricing section ── */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 60px;
   }
 
-  .license-card .icon {
-    font-size: 28px;
-    margin-bottom: 20px;
-    display: block;
+  .pricing-card {
+    background: var(--card);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
   }
+  .pricing-card:hover { background: var(--card2); }
+
+  .pricing-accent {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+  }
+
+  .pricing-tier {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .pricing-price {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .pricing-term {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text2);
+    letter-spacing: 0.1em;
+    margin-bottom: 28px;
+  }
+
+  .pricing-features {
+    list-style: none;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pricing-features li {
+    font-size: 14px;
+    color: var(--text2);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .check { flex-shrink: 0; margin-top: 1px; }
+
+  .pricing-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text2);
+    margin-top: 20px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 1.7;
+  }
+  .pricing-note a { color: var(--cyan); text-decoration: none; }
+  .pricing-note a:hover { text-decoration: underline; }
 
   /* ── Contact / Footer ── */
   .contact-section {
@@ -736,11 +771,7 @@
     margin-bottom: 16px;
   }
 
-  .contact-section p {
-    font-size: 16px;
-    color: var(--text2);
-    margin-bottom: 40px;
-  }
+  .contact-section p { font-size: 16px; color: var(--text2); margin-bottom: 40px; }
 
   .contact-email {
     font-family: 'JetBrains Mono', monospace;
@@ -762,19 +793,10 @@
     background: var(--navy);
   }
 
-  footer .brand {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-  }
+  footer .brand { font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700; }
   footer .brand span:first-child { color: var(--white); }
   footer .brand span:last-child  { color: var(--cyan); }
-
-  footer .copy {
-    font-size: 12px;
-    color: var(--text2);
-    letter-spacing: 0.04em;
-  }
+  footer .copy { font-size: 12px; color: var(--text2); letter-spacing: 0.04em; }
 
   footer .closed {
     font-family: 'JetBrains Mono', monospace;
@@ -805,12 +827,9 @@
     transform: translateY(32px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* ── Hamburger button (hidden on desktop) ── */
+  /* ── Hamburger button ── */
   .nav-hamburger {
     display: none;
     flex-direction: column;
@@ -831,7 +850,6 @@
   .nav-hamburger.open span:nth-child(2) { opacity: 0; }
   .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* Mobile menu drawer */
   .mobile-nav {
     display: none;
     position: fixed;
@@ -858,13 +876,12 @@
   .mobile-nav a:hover { color: var(--cyan); background: rgba(58,196,232,0.04); }
   .mobile-nav a:last-child { border-bottom: none; }
 
-  /* ── Large desktop 1280px+ ── */
+  /* ── Responsive ── */
   @media (min-width: 1280px) {
     section, .algo-section, .formats-section, .stains-section,
     .usecase-section, .license-section { padding: 100px 40px; }
   }
 
-  /* ── Tablet landscape / small desktop  1024px ── */
   @media (max-width: 1024px) {
     section, .algo-section, .formats-section, .stains-section,
     .usecase-section, .license-section { padding: 80px 32px; }
@@ -874,7 +891,6 @@
     .license-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
-  /* ── Tablet portrait  768px ── */
   @media (max-width: 768px) {
     nav { padding: 0 20px; }
     .nav-links { display: none; }
@@ -886,7 +902,6 @@
     .hero { padding: 100px 20px 100px; }
     .logo-ring { width: 140px; height: 140px; }
 
-    /* Stat strip: 2×2 grid instead of horizontal row */
     .hero-stat-strip {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -897,10 +912,7 @@
       border: 1px solid var(--border);
       animation: fadeUp 1s 0.6s ease both;
     }
-    .stat {
-      background: var(--card);
-      padding: 20px 16px;
-    }
+    .stat { background: var(--card); padding: 20px 16px; }
     .stat-divider { display: none; }
     .stat-num { font-size: 24px; }
 
@@ -914,7 +926,6 @@
 
     .format-grid { grid-template-columns: repeat(2, 1fr); }
 
-    /* Stain table: horizontal scroll wrapper */
     .stain-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .stain-table { min-width: 520px; }
 
@@ -923,24 +934,20 @@
     .usecase-meta { flex-direction: column; gap: 20px; }
 
     .license-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
 
     .contact-section { padding: 60px 20px 48px; }
-
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 20px; }
 
-    /* Inline grids inside SVS section */
     .svs-grid-3 { grid-template-columns: 1fr !important; }
     .svs-grid-5 { grid-template-columns: repeat(2, 1fr) !important; }
     .stats-grid-6 { grid-template-columns: repeat(3, 1fr) !important; }
   }
 
-  /* ── Mobile  480px ── */
   @media (max-width: 480px) {
     nav { padding: 0 16px; }
-
     section, .algo-section, .formats-section, .stains-section,
     .usecase-section, .license-section { padding: 52px 16px; }
-
     .hero { padding: 90px 16px 90px; }
     .logo-ring { width: 110px; height: 110px; margin-bottom: 24px; }
     .hero-badge { font-size: 10px; letter-spacing: 0.14em; }
@@ -948,24 +955,19 @@
     .hero-desc { font-size: 15px; }
     .hero-buttons { flex-direction: column; align-items: stretch; }
     .btn-primary, .btn-secondary { justify-content: center; text-align: center; }
-
     .stat-num { font-size: 20px; }
-
     .pipeline-step { grid-template-columns: 44px 1fr; }
     .step-num { font-size: 16px; padding: 16px 0; }
-
     .format-grid { grid-template-columns: repeat(2, 1fr); }
-
     .svs-grid-3 { grid-template-columns: 1fr !important; }
     .svs-grid-5 { grid-template-columns: 1fr 1fr !important; }
     .stats-grid-6 { grid-template-columns: repeat(2, 1fr) !important; }
-
     .usecase-meta { gap: 16px; }
     .contact-section { padding: 48px 16px 36px; }
     footer { padding: 20px 16px; }
+    .pricing-price { font-size: 40px; }
   }
 
-  /* ── Small phones  360px ── */
   @media (max-width: 360px) {
     .hero-title { font-size: 42px; }
     .stats-grid-6 { grid-template-columns: repeat(2, 1fr) !important; }
@@ -989,6 +991,7 @@
     <li><a href="#svs">SVS Parsing</a></li>
     <li><a href="#formats">Formats</a></li>
     <li><a href="#stains">Stains</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -1002,6 +1005,7 @@
   <a href="#svs">SVS Parsing</a>
   <a href="#formats">Formats</a>
   <a href="#stains">Stains</a>
+  <a href="#pricing">Pricing</a>
   <a href="#license">License</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -1009,11 +1013,8 @@
 <!-- ── Hero ── -->
 <div class="hero">
   <div class="hero-glow"></div>
-
-  <!-- SVG Logo -->
   <div class="logo-ring">
     <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Gradient defs -->
       <defs>
         <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
           <stop offset="0%"   stop-color="#1A3060"/>
@@ -1024,55 +1025,33 @@
           <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
       </defs>
-
-      <!-- Background circle -->
       <circle cx="100" cy="100" r="96" fill="url(#bgGrad)"/>
-
-      <!-- Outer rings -->
       <circle cx="100" cy="100" r="96" stroke="#3AC4E8" stroke-width="2.5" opacity="0.9"/>
       <circle cx="100" cy="100" r="85" stroke="#3AC4E8" stroke-width="1"   opacity="0.35"/>
       <circle cx="100" cy="100" r="74" stroke="#3AC4E8" stroke-width="1"   opacity="0.25"/>
       <circle cx="100" cy="100" r="63" stroke="#3AC4E8" stroke-width="1"   opacity="0.18"/>
-
-      <!-- Crosshairs -->
       <line x1="4"  y1="100" x2="196" y2="100" stroke="#3AC4E8" stroke-width="0.6" opacity="0.2"/>
       <line x1="100" y1="4"  x2="100" y2="196" stroke="#3AC4E8" stroke-width="0.6" opacity="0.2"/>
-
-      <!-- Fiber shapes — 5 cells -->
-      <!-- Center fiber -->
       <polygon points="100,56 122,66 128,88 118,108 96,112 76,102 70,80 82,62"
                fill="#3090DC" fill-opacity="0.85" stroke="#60C0F0" stroke-width="1.5" filter="url(#glow)"/>
-      <!-- Upper left -->
       <polygon points="52,58 72,50 84,62 80,80 62,84 46,74"
                fill="#2AB8C8" fill-opacity="0.80" stroke="#4AD8E8" stroke-width="1.2"/>
-      <!-- Upper right -->
       <polygon points="128,62 148,56 158,70 152,88 134,90 122,76"
                fill="#2090C0" fill-opacity="0.80" stroke="#40B8E0" stroke-width="1.2"/>
-      <!-- Lower left -->
       <polygon points="44,116 64,108 78,120 74,140 52,146 36,132"
                fill="#28A8B8" fill-opacity="0.80" stroke="#48CCE0" stroke-width="1.2"/>
-      <!-- Lower right -->
       <polygon points="126,116 148,112 158,128 150,146 128,150 112,138"
                fill="#2AC8B0" fill-opacity="0.80" stroke="#4AE8D0" stroke-width="1.2"/>
-
-      <!-- Crack lines on center fiber -->
       <line x1="88"  y1="72" x2="112" y2="98"  stroke="white" stroke-width="0.8" opacity="0.18"/>
       <line x1="96"  y1="66" x2="100" y2="102" stroke="white" stroke-width="0.7" opacity="0.14"/>
-
-      <!-- K lettermark -->
       <text x="100" y="108" text-anchor="middle" font-family="Orbitron, sans-serif"
             font-size="28" font-weight="700" fill="white" opacity="0.92">K</text>
     </svg>
   </div>
 
   <div class="hero-badge">Automated Histological Segmentation · v2.0</div>
-
-  <h1 class="hero-title">
-    <span class="k">KONI</span><span class="s">SCOPE</span>
-  </h1>
-
+  <h1 class="hero-title"><span class="k">KONI</span><span class="s">SCOPE</span></h1>
   <div class="hero-sub">Muscle Fiber Analysis Suite</div>
-
   <p class="hero-desc">
     Automated segmentation, measurement, and statistical analysis of skeletal
     muscle fibers from histological slide images. Capable of detecting and
@@ -1081,34 +1060,18 @@
   </p>
 
   <div class="hero-buttons">
-    <a class="btn-primary" href="https://www.dropbox.com/scl/fi/wfucwp1fl1n2uvhq41cv5/Koniscope.zip?rlkey=m4qolw4wbjggpilsuhhbtlzma&st=58vje9fp&dl=1" target="_blank">
-      ↓ &nbsp;Download
-    </a>
-    <a class="btn-secondary" href="https://github.com/Ge0rge-K" target="_blank">
-      ⬡ &nbsp;View on GitHub
-    </a>
+    <a class="btn-primary" href="https://www.dropbox.com/scl/fi/wfucwp1fl1n2uvhq41cv5/Koniscope.zip?rlkey=m4qolw4wbjggpilsuhhbtlzma&st=58vje9fp&dl=1" target="_blank">↓ &nbsp;Download</a>
+    <a class="btn-secondary" href="https://github.com/Ge0rge-K" target="_blank">⬡ &nbsp;View on GitHub</a>
   </div>
 
   <div class="hero-stat-strip">
-    <div class="stat">
-      <div class="stat-num">16,000+</div>
-      <div class="stat-label">Fibers per SVS slide</div>
-    </div>
+    <div class="stat"><div class="stat-num">16,000+</div><div class="stat-label">Fibers per SVS slide</div></div>
     <div class="stat-divider"></div>
-    <div class="stat">
-      <div class="stat-num">7</div>
-      <div class="stat-label">Stain profiles</div>
-    </div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Stain profiles</div></div>
     <div class="stat-divider"></div>
-    <div class="stat">
-      <div class="stat-num">Auto</div>
-      <div class="stat-label">Full SVS parsing</div>
-    </div>
+    <div class="stat"><div class="stat-num">Auto</div><div class="stat-label">Full SVS parsing</div></div>
     <div class="stat-divider"></div>
-    <div class="stat">
-      <div class="stat-num">v2.0</div>
-      <div class="stat-label">Rebuilt engine</div>
-    </div>
+    <div class="stat"><div class="stat-num">v2.0</div><div class="stat-label">Rebuilt engine</div></div>
   </div>
 </div>
 
@@ -1121,47 +1084,21 @@
     <strong style="color:var(--cyan)">16,867 fibers</strong> detected, segmented, and measured
     — mean diameter 55.7 µm, circularity 0.60 — fully automated.
   </p>
-
-  <!-- Main screenshot -->
   <div style="position:relative; border:1px solid var(--border); overflow:hidden; margin-bottom:2px; max-width:480px;">
-    <img src="screenshot.png" alt="Koniscope Analysis Screenshot showing 16,867 fibers detected across 7 tiles with full statistics dashboard"
-         style="width:100%; display:block; image-rendering:auto;"/>
-    <!-- Overlay badge -->
+    <img src="screenshot.png" alt="Koniscope Analysis Screenshot" style="width:100%; display:block;"/>
     <div style="position:absolute; top:10px; right:10px; background:rgba(6,13,30,0.92); border:1px solid var(--cyan); padding:7px 12px; backdrop-filter:blur(8px);">
       <div style="font-family:'Orbitron',sans-serif; font-size:14px; font-weight:900; color:var(--cyan); line-height:1;">16,867</div>
       <div style="font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:0.12em; color:var(--text2); margin-top:3px;">FIBERS DETECTED</div>
     </div>
   </div>
-
-  <!-- Stats strip pulled from screenshot -->
   <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:2px; background:var(--border); border:1px solid var(--border); border-top:none; max-width:480px;" class="stats-grid-6">
-    <div style="background:var(--card2); padding:20px 16px; text-align:center;">
-      <div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">16,867</div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Total Fibers</div>
-    </div>
-    <div style="background:var(--card2); padding:20px 16px; text-align:center;">
-      <div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">55.7 µm</div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Mean Diameter</div>
-    </div>
-    <div style="background:var(--card2); padding:20px 16px; text-align:center;">
-      <div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">56.2 µm</div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Median Diameter</div>
-    </div>
-    <div style="background:var(--card2); padding:20px 16px; text-align:center;">
-      <div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">0.60</div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Circularity</div>
-    </div>
-    <div style="background:var(--card2); padding:20px 16px; text-align:center;">
-      <div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">1.46</div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Aspect Ratio</div>
-    </div>
-    <div style="background:var(--card2); padding:20px 16px; text-align:center;">
-      <div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">0.945</div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Solidity</div>
-    </div>
+    <div style="background:var(--card2); padding:20px 16px; text-align:center;"><div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">16,867</div><div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Total Fibers</div></div>
+    <div style="background:var(--card2); padding:20px 16px; text-align:center;"><div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">55.7 µm</div><div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Mean Diameter</div></div>
+    <div style="background:var(--card2); padding:20px 16px; text-align:center;"><div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">56.2 µm</div><div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Median Diameter</div></div>
+    <div style="background:var(--card2); padding:20px 16px; text-align:center;"><div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">0.60</div><div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Circularity</div></div>
+    <div style="background:var(--card2); padding:20px 16px; text-align:center;"><div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">1.46</div><div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Aspect Ratio</div></div>
+    <div style="background:var(--card2); padding:20px 16px; text-align:center;"><div style="font-family:'Orbitron',sans-serif; font-size:18px; font-weight:700; color:var(--cyan);">0.945</div><div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.1em; color:var(--text2); margin-top:4px; text-transform:uppercase;">Solidity</div></div>
   </div>
-
-  <!-- Caption -->
   <p style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--text2); letter-spacing:0.08em; margin-top:14px; text-align:left; max-width:480px;">
     Sample: UME_MEC22084_Peduncle_Muscle.svs &nbsp;·&nbsp; H&amp;E (Standard) &nbsp;·&nbsp; Scale 0.5 µm/px (20× equivalent) &nbsp;·&nbsp; 7 tiles processed in parallel
   </p>
@@ -1173,39 +1110,27 @@
 <section id="application" class="reveal">
   <div class="section-label">Real-World Application</div>
   <h2 class="section-title">Built for<br/><span>active research</span></h2>
-  <p class="section-body">
-    Koniscope was created and deployed in the field — not as a demo, but as the primary
-    analysis tool for an ongoing scientific investigation into manatee health.
-  </p>
-
+  <p class="section-body">Koniscope was created and deployed in the field — not as a demo, but as the primary analysis tool for an ongoing scientific investigation into manatee health.</p>
   <div class="app-grid">
     <div class="app-card">
       <div class="app-card-icon">🐾</div>
       <h3>Manatee Cachexia Detection</h3>
-      <p>Koniscope identifies early signs of cachexia — progressive muscle wasting — in Florida manatees
-         (<em>Trichechus manatus latirostris</em>) along the West Coast of Florida by measuring fiber
-         cross-sectional area distributions in necropsy H&amp;E slides.</p>
+      <p>Koniscope identifies early signs of cachexia — progressive muscle wasting — in Florida manatees (<em>Trichechus manatus latirostris</em>) along the West Coast of Florida by measuring fiber cross-sectional area distributions in necropsy H&amp;E slides.</p>
     </div>
     <div class="app-card">
       <div class="app-card-icon">📊</div>
       <h3>Morphometric Statistics</h3>
-      <p>Each run produces a six-panel morphometry dashboard: fiber diameter, area, circularity,
-         aspect ratio, and scatter plots — along with IQR, SD, and full export-ready CSV output.</p>
+      <p>Each run produces a six-panel morphometry dashboard: fiber diameter, area, circularity, aspect ratio, and scatter plots — along with IQR, SD, and full export-ready CSV output.</p>
     </div>
     <div class="app-card">
       <div class="app-card-icon">🔬</div>
       <h3>Full SVS Whole-Slide Auto-Parsing</h3>
-      <p>Koniscope automatically tiles and processes entire SVS whole-slide images
-         across all available CPU cores in parallel. A single full-resolution SVS scan
-         containing <strong style="color:var(--cyan)">16,000+ muscle fibers</strong> is detected,
-         segmented, and precisely marked with no manual cropping, no tile selection,
-         and no user intervention — just load the file and run.</p>
+      <p>Koniscope automatically tiles and processes entire SVS whole-slide images across all available CPU cores in parallel. A single full-resolution SVS scan containing <strong style="color:var(--cyan)">16,000+ muscle fibers</strong> is detected, segmented, and precisely marked with no manual cropping, no tile selection, and no user intervention — just load the file and run.</p>
     </div>
     <div class="app-card">
       <div class="app-card-icon">⚡</div>
       <h3>Rebuilt Segmentation Engine</h3>
-      <p>Version 2.0 corrected inverted thresholding logic, added per-fiber crack filling for internal
-         myofibril artifacts, and introduced adaptive watershed parameters tuned to large-fiber tissue.</p>
+      <p>Version 2.0 corrected inverted thresholding logic, added per-fiber crack filling for internal myofibril artifacts, and introduced adaptive watershed parameters tuned to large-fiber tissue.</p>
     </div>
   </div>
 </section>
@@ -1216,81 +1141,35 @@
 <section id="algorithm" class="algo-section reveal">
   <div class="section-label">Segmentation Engine v2.0</div>
   <h2 class="section-title">7-step <span>detection pipeline</span></h2>
-  <p class="section-body">
-    Every fiber is detected, crack-filled, split where necessary, and validated by shape
-    — without any manual parameter tuning per slide.
-  </p>
-
+  <p class="section-body">Every fiber is detected, crack-filled, split where necessary, and validated by shape — without any manual parameter tuning per slide.</p>
   <div class="algo-pipeline">
     <div class="pipeline-step">
       <div class="step-num">01</div>
-      <div class="step-content">
-        <div>
-          <h4>Luminance Thresholding</h4>
-          <p>Bright connective tissue and background (high L channel in LAB space) is excluded. Fiber bodies remain as the low-L foreground mask.</p>
-        </div>
-        <span class="step-tag">LAB · L-channel</span>
-      </div>
+      <div class="step-content"><div><h4>Luminance Thresholding</h4><p>Bright connective tissue and background (high L channel in LAB space) is excluded. Fiber bodies remain as the low-L foreground mask.</p></div><span class="step-tag">LAB · L-channel</span></div>
     </div>
     <div class="pipeline-step">
       <div class="step-num">02</div>
-      <div class="step-content">
-        <div>
-          <h4>Morphological Opening</h4>
-          <p>A 7px elliptical kernel removes small debris, noise pixels, and thin connective tissue threads that passed the luminance threshold.</p>
-        </div>
-        <span class="step-tag">7px kernel</span>
-      </div>
+      <div class="step-content"><div><h4>Morphological Opening</h4><p>A 7px elliptical kernel removes small debris, noise pixels, and thin connective tissue threads that passed the luminance threshold.</p></div><span class="step-tag">7px kernel</span></div>
     </div>
     <div class="pipeline-step">
       <div class="step-num">03</div>
-      <div class="step-content">
-        <div>
-          <h4>Per-Component Crack Filling</h4>
-          <p>Each connected component receives independent hole-filling via scipy binary_fill_holes — internal myofibril striations and fixation cracks disappear without merging adjacent fibers.</p>
-        </div>
-        <span class="step-tag">KEY STEP</span>
-      </div>
+      <div class="step-content"><div><h4>Per-Component Crack Filling</h4><p>Each connected component receives independent hole-filling via scipy binary_fill_holes — internal myofibril striations and fixation cracks disappear without merging adjacent fibers.</p></div><span class="step-tag">KEY STEP</span></div>
     </div>
     <div class="pipeline-step">
       <div class="step-num">04</div>
-      <div class="step-content">
-        <div>
-          <h4>Connected Component Analysis</h4>
-          <p>Labeled components are filtered by area bounds derived from expected fiber size at the given scale. Components below the minimum are discarded as debris.</p>
-        </div>
-        <span class="step-tag">Area filter</span>
-      </div>
+      <div class="step-content"><div><h4>Connected Component Analysis</h4><p>Labeled components are filtered by area bounds derived from expected fiber size at the given scale. Components below the minimum are discarded as debris.</p></div><span class="step-tag">Area filter</span></div>
     </div>
     <div class="pipeline-step">
       <div class="step-num">05</div>
-      <div class="step-content">
-        <div>
-          <h4>Adaptive Watershed Splitting</h4>
-          <p>Blobs exceeding 2× the median single-fiber area are split using distance-transform watershed. Sigma and min_distance adapt to each blob's estimated radius — not fixed constants.</p>
-        </div>
-        <span class="step-tag">Adaptive params</span>
-      </div>
+      <div class="step-content"><div><h4>Adaptive Watershed Splitting</h4><p>Blobs exceeding 2× the median single-fiber area are split using distance-transform watershed. Sigma and min_distance adapt to each blob's estimated radius — not fixed constants.</p></div><span class="step-tag">Adaptive params</span></div>
     </div>
     <div class="pipeline-step">
       <div class="step-num">06</div>
-      <div class="step-content">
-        <div>
-          <h4>Shape Quality Filter</h4>
-          <p>Each candidate is rejected if circularity &lt; 0.18, aspect ratio &gt; 5.5, or solidity &lt; 0.62. Thresholds are tuned for large irregular manatee fibers.</p>
-        </div>
-        <span class="step-tag">QC filter</span>
-      </div>
+      <div class="step-content"><div><h4>Shape Quality Filter</h4><p>Each candidate is rejected if circularity &lt; 0.18, aspect ratio &gt; 5.5, or solidity &lt; 0.62. Thresholds are tuned for large irregular manatee fibers.</p></div><span class="step-tag">QC filter</span></div>
     </div>
     <div class="pipeline-step">
       <div class="step-num">07</div>
-      <div class="step-content">
-        <div>
-          <h4>Morphometry &amp; Statistics</h4>
-          <p>Accepted fibers are measured: area (µm²), equivalent diameter (µm), circularity, aspect ratio, and solidity. Full statistical figures and CSV output are generated automatically.</p>
-        </div>
-        <span class="step-tag">Output</span>
-      </div>
+      <div class="step-content"><div><h4>Morphometry &amp; Statistics</h4><p>Accepted fibers are measured: area (µm²), equivalent diameter (µm), circularity, aspect ratio, and solidity. Full statistical figures and CSV output are generated automatically.</p></div><span class="step-tag">Output</span></div>
     </div>
   </div>
 </section>
@@ -1301,72 +1180,36 @@
 <section id="svs" class="algo-section reveal">
   <div class="section-label">Whole-Slide Intelligence</div>
   <h2 class="section-title">16,000+ fibers. <span>One click.</span></h2>
-  <p class="section-body">
-    Koniscope's SVS engine automatically parses entire gigapixel whole-slide images
-    from end to end — no tile selection, no manual ROI drawing, no human input required
-    after pressing Run.
-  </p>
+  <p class="section-body">Koniscope's SVS engine automatically parses entire gigapixel whole-slide images from end to end — no tile selection, no manual ROI drawing, no human input required after pressing Run.</p>
 
   <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; background:var(--border); border:1px solid var(--border); margin-top:60px;" class="svs-grid-3">
-
     <div style="background:var(--card); padding:40px 32px; position:relative; overflow:hidden;">
       <div style="font-family:'Orbitron',sans-serif; font-size:48px; font-weight:900; color:var(--cyan); line-height:1; margin-bottom:16px; text-shadow:0 0 30px rgba(58,196,232,0.4);">16K+</div>
       <div style="font-family:'Orbitron',sans-serif; font-size:12px; letter-spacing:0.08em; color:var(--white); margin-bottom:12px; text-transform:uppercase;">Fibers Per SVS Scan</div>
       <p style="font-size:14px; color:var(--text2); line-height:1.7;">A single whole-slide SVS file can contain tens of thousands of individual muscle fibers. Koniscope detects and precisely outlines every one of them automatically.</p>
     </div>
-
     <div style="background:var(--card); padding:40px 32px;">
       <div style="font-family:'Orbitron',sans-serif; font-size:48px; font-weight:900; color:var(--teal); line-height:1; margin-bottom:16px; text-shadow:0 0 30px rgba(42,232,196,0.4);">Auto</div>
       <div style="font-family:'Orbitron',sans-serif; font-size:12px; letter-spacing:0.08em; color:var(--white); margin-bottom:12px; text-transform:uppercase;">Full Slide Parsing</div>
       <p style="font-size:14px; color:var(--text2); line-height:1.7;">Koniscope automatically selects the correct pyramid level closest to 20&times; magnification, tiles the entire slide, and dispatches each tile to a parallel worker — fully hands-free.</p>
     </div>
-
     <div style="background:var(--card); padding:40px 32px;">
       <div style="font-family:'Orbitron',sans-serif; font-size:48px; font-weight:900; color:var(--cyan2); line-height:1; margin-bottom:16px; text-shadow:0 0 30px rgba(93,212,240,0.4);">±µm</div>
       <div style="font-family:'Orbitron',sans-serif; font-size:12px; letter-spacing:0.08em; color:var(--white); margin-bottom:12px; text-transform:uppercase;">Micron-Level Precision</div>
       <p style="font-size:14px; color:var(--text2); line-height:1.7;">Every detected fiber is measured to sub-micron precision — diameter, area, circularity, aspect ratio, and solidity — using the scanner's native MPP (microns per pixel) calibration.</p>
     </div>
-
   </div>
 
-  <!-- SVS pipeline detail -->
   <div style="margin-top:2px; background:var(--card); border:1px solid var(--border); border-top:none; padding:40px 48px;">
     <div style="font-family:'Orbitron',sans-serif; font-size:13px; letter-spacing:0.06em; color:var(--cyan); margin-bottom:24px; text-transform:uppercase;">How SVS Auto-Parsing Works</div>
     <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0; background:var(--border);" class="svs-grid-5">
-
-      <div style="background:var(--card2); padding:24px 20px; text-align:center;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">①</div>
-        <div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">LOAD SVS</div>
-        <div style="font-size:12px; color:var(--text2); line-height:1.6;">OpenSlide reads the file and extracts pyramid metadata and MPP calibration</div>
-      </div>
-
-      <div style="background:var(--card2); padding:24px 20px; text-align:center;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">②</div>
-        <div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">AUTO-LEVEL</div>
-        <div style="font-size:12px; color:var(--text2); line-height:1.6;">Automatically selects pyramid level closest to 20× — no manual zoom selection</div>
-      </div>
-
-      <div style="background:var(--card2); padding:24px 20px; text-align:center;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">③</div>
-        <div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">TILE GRID</div>
-        <div style="font-size:12px; color:var(--text2); line-height:1.6;">Entire slide is divided into a grid of overlapping tiles covering every region</div>
-      </div>
-
-      <div style="background:var(--card2); padding:24px 20px; text-align:center;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">④</div>
-        <div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">PARALLEL</div>
-        <div style="font-size:12px; color:var(--text2); line-height:1.6;">All tiles dispatched simultaneously across CPU cores via ProcessPoolExecutor</div>
-      </div>
-
-      <div style="background:var(--card2); padding:24px 20px; text-align:center;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">⑤</div>
-        <div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">COMPILE</div>
-        <div style="font-size:12px; color:var(--text2); line-height:1.6;">Results merged into unified statistics, CSV export, and full morphometry dashboard</div>
-      </div>
-
+      <div style="background:var(--card2); padding:24px 20px; text-align:center;"><div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">①</div><div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">LOAD SVS</div><div style="font-size:12px; color:var(--text2); line-height:1.6;">OpenSlide reads the file and extracts pyramid metadata and MPP calibration</div></div>
+      <div style="background:var(--card2); padding:24px 20px; text-align:center;"><div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">②</div><div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">AUTO-LEVEL</div><div style="font-size:12px; color:var(--text2); line-height:1.6;">Automatically selects pyramid level closest to 20× — no manual zoom selection</div></div>
+      <div style="background:var(--card2); padding:24px 20px; text-align:center;"><div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">③</div><div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">TILE GRID</div><div style="font-size:12px; color:var(--text2); line-height:1.6;">Entire slide is divided into a grid of overlapping tiles covering every region</div></div>
+      <div style="background:var(--card2); padding:24px 20px; text-align:center;"><div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">④</div><div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">PARALLEL</div><div style="font-size:12px; color:var(--text2); line-height:1.6;">All tiles dispatched simultaneously across CPU cores via ProcessPoolExecutor</div></div>
+      <div style="background:var(--card2); padding:24px 20px; text-align:center;"><div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">⑤</div><div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">COMPILE</div><div style="font-size:12px; color:var(--text2); line-height:1.6;">Results merged into unified statistics, CSV export, and full morphometry dashboard</div></div>
     </div>
   </div>
-
 </section>
 
 <div class="full-divider"></div>
@@ -1376,48 +1219,15 @@
   <div class="section-label">Supported Formats</div>
   <h2 class="section-title">Images &amp; <span>whole slides</span></h2>
   <p class="section-body">Standard image formats and major whole-slide imaging platforms are supported out of the box.</p>
-
   <div class="format-grid">
-    <div class="format-card">
-      <div class="format-ext">.tif</div>
-      <div class="format-name">TIFF / BigTIFF</div>
-      <div class="format-badge">16-bit · multi-page</div>
-    </div>
-    <div class="format-card">
-      <div class="format-ext">.png</div>
-      <div class="format-name">PNG</div>
-      <div class="format-badge">RGBA support</div>
-    </div>
-    <div class="format-card">
-      <div class="format-ext">.jpg</div>
-      <div class="format-name">JPEG</div>
-      <div class="format-badge">8-bit</div>
-    </div>
-    <div class="format-card">
-      <div class="format-ext">.bmp</div>
-      <div class="format-name">Bitmap</div>
-      <div class="format-badge">Uncompressed</div>
-    </div>
-    <div class="format-card">
-      <div class="format-ext">.svs</div>
-      <div class="format-name">Aperio SVS</div>
-      <div class="format-badge">WSI · Leica/Aperio</div>
-    </div>
-    <div class="format-card">
-      <div class="format-ext">.ndpi</div>
-      <div class="format-name">Hamamatsu</div>
-      <div class="format-badge">WSI · NanoZoomer</div>
-    </div>
-    <div class="format-card">
-      <div class="format-ext">.scn</div>
-      <div class="format-name">Leica SCN</div>
-      <div class="format-badge">WSI · SCN400</div>
-    </div>
-    <div class="format-card">
-      <div class="format-ext">.mrxs</div>
-      <div class="format-name">3DHISTECH</div>
-      <div class="format-badge">WSI · Pannoramic</div>
-    </div>
+    <div class="format-card"><div class="format-ext">.tif</div><div class="format-name">TIFF / BigTIFF</div><div class="format-badge">16-bit · multi-page</div></div>
+    <div class="format-card"><div class="format-ext">.png</div><div class="format-name">PNG</div><div class="format-badge">RGBA support</div></div>
+    <div class="format-card"><div class="format-ext">.jpg</div><div class="format-name">JPEG</div><div class="format-badge">8-bit</div></div>
+    <div class="format-card"><div class="format-ext">.bmp</div><div class="format-name">Bitmap</div><div class="format-badge">Uncompressed</div></div>
+    <div class="format-card"><div class="format-ext">.svs</div><div class="format-name">Aperio SVS</div><div class="format-badge">WSI · Leica/Aperio</div></div>
+    <div class="format-card"><div class="format-ext">.ndpi</div><div class="format-name">Hamamatsu</div><div class="format-badge">WSI · NanoZoomer</div></div>
+    <div class="format-card"><div class="format-ext">.scn</div><div class="format-name">Leica SCN</div><div class="format-badge">WSI · SCN400</div></div>
+    <div class="format-card"><div class="format-ext">.mrxs</div><div class="format-name">3DHISTECH</div><div class="format-badge">WSI · Pannoramic</div></div>
   </div>
 </section>
 
@@ -1428,52 +1238,17 @@
   <div class="section-label">Detection Profiles</div>
   <h2 class="section-title">7 stain <span>profiles</span></h2>
   <p class="section-body">Each profile applies the correct color-space strategy for that staining protocol. Select from the dropdown — no manual threshold tuning needed.</p>
-
   <div class="stain-table-scroll">
   <table class="stain-table">
-    <thead>
-      <tr>
-        <th>Profile</th>
-        <th>Detection Mode</th>
-        <th>Best For</th>
-      </tr>
-    </thead>
+    <thead><tr><th>Profile</th><th>Detection Mode</th><th>Best For</th></tr></thead>
     <tbody>
-      <tr>
-        <td>H&amp;E (Standard)</td>
-        <td><span class="mode-tag mode-hne">LAB L-channel</span></td>
-        <td>Most H&amp;E slides — recommended default</td>
-      </tr>
-      <tr>
-        <td>H&amp;E (Pale / Weak)</td>
-        <td><span class="mode-tag mode-hne">LAB L-channel</span></td>
-        <td>Lightly stained or faded slides</td>
-      </tr>
-      <tr>
-        <td>Haematoxylin Only</td>
-        <td><span class="mode-tag mode-hema">b-channel inv.</span></td>
-        <td>Blue haematoxylin without eosin counterstain</td>
-      </tr>
-      <tr>
-        <td>NADH-TR</td>
-        <td><span class="mode-tag mode-blackhat">Blackhat morph.</span></td>
-        <td>Dark fibers on pale background</td>
-      </tr>
-      <tr>
-        <td>ATPase</td>
-        <td><span class="mode-tag mode-blackhat">Blackhat morph.</span></td>
-        <td>Type I / Type II fiber contrast staining</td>
-      </tr>
-      <tr>
-        <td>Masson's Trichrome</td>
-        <td><span class="mode-tag mode-trichrome">Red channel inv.</span></td>
-        <td>Muscle (red) vs. collagen (blue/green)</td>
-      </tr>
-      <tr>
-        <td>Modified Gomori Trichrome</td>
-        <td><span class="mode-tag mode-trichrome">Red channel inv.</span></td>
-        <td>Ragged-red fibers, mitochondrial staining</td>
-      </tr>
+      <tr><td>H&amp;E (Standard)</td><td><span class="mode-tag mode-hne">LAB L-channel</span></td><td>Most H&amp;E slides — recommended default</td></tr>
+      <tr><td>H&amp;E (Pale / Weak)</td><td><span class="mode-tag mode-hne">LAB L-channel</span></td><td>Lightly stained or faded slides</td></tr>
+      <tr><td>Haematoxylin Only</td><td><span class="mode-tag mode-hema">b-channel inv.</span></td><td>Blue haematoxylin without eosin counterstain</td></tr>
+      <tr><td>NADH-TR</td><td><span class="mode-tag mode-blackhat">Blackhat morph.</span></td><td>Dark fibers on pale background</td></tr>
+      <tr><td>ATPase</td><td><span class="mode-tag mode-blackhat">Blackhat morph.</span></td><td>Type I / Type II fiber contrast staining</td></tr>
+      <tr><td>Masson's Trichrome</td><td><span class="mode-tag mode-trichrome">Red channel inv.</span></td><td>Muscle (red) vs. collagen (blue/green)</td></tr>
+      <tr><td>Modified Gomori Trichrome</td><td><span class="mode-tag mode-trichrome">Red channel inv.</span></td><td>Ragged-red fibers, mitochondrial staining</td></tr>
     </tbody>
   </table>
   </div>
@@ -1485,32 +1260,84 @@
 <section class="usecase-section reveal">
   <div class="section-label">Scientific Use</div>
   <h2 class="section-title">Florida <span>manatee research</span></h2>
-
   <div class="usecase-card">
-    <p class="usecase-quote">
-      "Koniscope has been used to identify signs of cachexia by measuring and graphing
-       muscle fiber irregularities in manatees on the West Coast of Florida — providing
-       quantitative morphometric data where only qualitative assessment was previously possible."
-    </p>
+    <p class="usecase-quote">"Koniscope has been used to identify signs of cachexia by measuring and graphing muscle fiber irregularities in manatees on the West Coast of Florida — providing quantitative morphometric data where only qualitative assessment was previously possible."</p>
     <div class="usecase-meta">
-      <div class="meta-item">
-        <div class="meta-label">Species</div>
-        <div class="meta-value">Trichechus manatus latirostris</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Region</div>
-        <div class="meta-value">West Coast of Florida</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Condition studied</div>
-        <div class="meta-value">Cachexia / Muscle wasting</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Stain</div>
-        <div class="meta-value">H&amp;E, 20× scanner</div>
-      </div>
+      <div class="meta-item"><div class="meta-label">Species</div><div class="meta-value">Trichechus manatus latirostris</div></div>
+      <div class="meta-item"><div class="meta-label">Region</div><div class="meta-value">West Coast of Florida</div></div>
+      <div class="meta-item"><div class="meta-label">Condition studied</div><div class="meta-value">Cachexia / Muscle wasting</div></div>
+      <div class="meta-item"><div class="meta-label">Stain</div><div class="meta-value">H&amp;E, 20× scanner</div></div>
     </div>
   </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- ── Pricing ── -->
+<section id="pricing" class="license-section reveal">
+  <div class="section-label">Licensing &amp; Pricing</div>
+  <h2 class="section-title">Simple <span>transparent pricing</span></h2>
+  <p class="section-body">One-time license fees for academic and animal research institutions. No subscriptions, no hidden costs.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-accent" style="background:linear-gradient(90deg,var(--cyan),transparent);"></div>
+      <div class="pricing-tier" style="color:var(--cyan);">Academic</div>
+      <div class="pricing-price">$299</div>
+      <div class="pricing-term">ONE-TIME · SINGLE RESEARCHER</div>
+      <ul class="pricing-features">
+        <li><span class="check" style="color:var(--cyan);">✓</span> Individual graduate student or researcher</li>
+        <li><span class="check" style="color:var(--cyan);">✓</span> Single device activation</li>
+        <li><span class="check" style="color:var(--cyan);">✓</span> Full SVS whole-slide analysis</li>
+        <li><span class="check" style="color:var(--cyan);">✓</span> All 7 stain profiles</li>
+        <li><span class="check" style="color:var(--cyan);">✓</span> CSV export &amp; morphometry dashboard</li>
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-accent" style="background:linear-gradient(90deg,var(--teal),transparent);"></div>
+      <div class="pricing-tier" style="color:var(--teal);">University Lab</div>
+      <div class="pricing-price">$799</div>
+      <div class="pricing-term">ONE-TIME · LAB LICENSE</div>
+      <ul class="pricing-features">
+        <li><span class="check" style="color:var(--teal);">✓</span> University or veterinary school lab</li>
+        <li><span class="check" style="color:var(--teal);">✓</span> Up to 3 devices in one lab</li>
+        <li><span class="check" style="color:var(--teal);">✓</span> Full SVS whole-slide analysis</li>
+        <li><span class="check" style="color:var(--teal);">✓</span> All 7 stain profiles</li>
+        <li><span class="check" style="color:var(--teal);">✓</span> Priority email support</li>
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-accent" style="background:linear-gradient(90deg,#C080F0,transparent);"></div>
+      <div class="pricing-tier" style="color:#C080F0;">Zoo / Aquarium</div>
+      <div class="pricing-price">$599</div>
+      <div class="pricing-term">ONE-TIME · INSTITUTION</div>
+      <ul class="pricing-features">
+        <li><span class="check" style="color:#C080F0;">✓</span> Zoo, aquarium, or wildlife facility</li>
+        <li><span class="check" style="color:#C080F0;">✓</span> Single device activation</li>
+        <li><span class="check" style="color:#C080F0;">✓</span> Full SVS whole-slide analysis</li>
+        <li><span class="check" style="color:#C080F0;">✓</span> All 7 stain profiles</li>
+        <li><span class="check" style="color:#C080F0;">✓</span> CSV export &amp; morphometry dashboard</li>
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-accent" style="background:linear-gradient(90deg,#F0C060,transparent);"></div>
+      <div class="pricing-tier" style="color:#F0C060;">Marine Mammal Program</div>
+      <div class="pricing-price">$499</div>
+      <div class="pricing-term">ONE-TIME · PROGRAM LICENSE</div>
+      <ul class="pricing-features">
+        <li><span class="check" style="color:#F0C060;">✓</span> Stranding networks, FWC, NOAA programs</li>
+        <li><span class="check" style="color:#F0C060;">✓</span> Single device activation</li>
+        <li><span class="check" style="color:#F0C060;">✓</span> Full SVS whole-slide analysis</li>
+        <li><span class="check" style="color:#F0C060;">✓</span> All 7 stain profiles</li>
+        <li><span class="check" style="color:#F0C060;">✓</span> CSV export &amp; morphometry dashboard</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="pricing-note">
+    All licenses include a license key activation system. For custom institutional pricing contact
+    <a href="mailto:gazkoniaris@icloud.com">gazkoniaris@icloud.com</a>
+  </p>
 </section>
 
 <div class="full-divider"></div>
@@ -1520,23 +1347,10 @@
   <div class="section-label">Licensing</div>
   <h2 class="section-title">Closed source &amp;<br/><span>proprietary</span></h2>
   <p class="section-body">Koniscope is not open source. All intellectual property, source code, and algorithms are the exclusive property of George Alekos Zimmers Koniaris.</p>
-
   <div class="license-grid">
-    <div class="license-card">
-      <span class="icon">🔒</span>
-      <h3>Closed Source</h3>
-      <p>Source code is private and not distributed under any open-source license. Reverse engineering, decompilation, or modification is strictly prohibited.</p>
-    </div>
-    <div class="license-card">
-      <span class="icon">🏛️</span>
-      <h3>Single Lab License</h3>
-      <p>Each license is personal to one named individual for use within one laboratory environment. Sharing, sublicensing, or multi-user deployment requires a separate agreement.</p>
-    </div>
-    <div class="license-card">
-      <span class="icon">©</span>
-      <h3>All Rights Reserved</h3>
-      <p>Copyright © 2026 George Alekos Zimmers Koniaris. Protected under the DMCA, U.S. Copyright Act, and the Berne Convention. All unauthorized use is prohibited.</p>
-    </div>
+    <div class="license-card"><span class="icon">🔒</span><h3>Closed Source</h3><p>Source code is private and not distributed under any open-source license. Reverse engineering, decompilation, or modification is strictly prohibited.</p></div>
+    <div class="license-card"><span class="icon">🏛️</span><h3>Single Lab License</h3><p>Each license is personal to one named individual for use within one laboratory environment. Sharing, sublicensing, or multi-user deployment requires a separate agreement.</p></div>
+    <div class="license-card"><span class="icon">©</span><h3>All Rights Reserved</h3><p>Copyright © 2026 George Alekos Zimmers Koniaris. Protected under the DMCA, U.S. Copyright Act, and the Berne Convention. All unauthorized use is prohibited.</p></div>
   </div>
 </section>
 
@@ -1557,26 +1371,20 @@
 </div><!-- .wrap -->
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
     });
   }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
 
-  // Hamburger menu
   const hamburger = document.getElementById('navHamburger');
   const mobileNav = document.getElementById('mobileNav');
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
     mobileNav.classList.toggle('open');
   });
-  // Close mobile nav on link click
   mobileNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('open');
@@ -1584,22 +1392,13 @@
     });
   });
 
-  // Nav highlight on scroll
   const sections = document.querySelectorAll('section[id], div[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.style.color = '';
-      if (link.getAttribute('href') === '#' + current) {
-        link.style.color = 'var(--cyan)';
-      }
-    });
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.style.color = ''; if (l.getAttribute('href') === '#' + current) l.style.color = 'var(--cyan)'; });
   });
 </script>
+</body>
+</html>
