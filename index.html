@@ -837,6 +837,7 @@
   <ul class="nav-links">
     <li><a href="#application">Application</a></li>
     <li><a href="#algorithm">Algorithm</a></li>
+    <li><a href="#svs">SVS Parsing</a></li>
     <li><a href="#formats">Formats</a></li>
     <li><a href="#stains">Stains</a></li>
     <li><a href="#license">License</a></li>
@@ -913,22 +914,24 @@
 
   <p class="hero-desc">
     Automated segmentation, measurement, and statistical analysis of skeletal
-    muscle fibers from histological slide images — built for serious research.
+    muscle fibers from histological slide images. Capable of detecting and
+    precisely marking <strong style="color:var(--cyan)">16,000+ individual fibers</strong>
+    across a full whole-slide SVS scan — fully automated, no manual input required.
   </p>
 
   <div class="hero-buttons">
-    <a class="btn-primary" href="https://github.com/Ge0rge-K/koniscope/releases" target="_blank">
+    <a class="btn-primary" href="https://github.com/YOUR_USERNAME/koniscope/releases" target="_blank">
       ↓ &nbsp;Download
     </a>
-    <a class="btn-secondary" href="https://github.com/Ge0rge-K/koniscope" target="_blank">
+    <a class="btn-secondary" href="https://github.com/YOUR_USERNAME/koniscope" target="_blank">
       ⬡ &nbsp;View on GitHub
     </a>
   </div>
 
   <div class="hero-stat-strip">
     <div class="stat">
-      <div class="stat-num">231+</div>
-      <div class="stat-label">Fibers per slide</div>
+      <div class="stat-num">16,000+</div>
+      <div class="stat-label">Fibers per SVS slide</div>
     </div>
     <div class="stat-divider"></div>
     <div class="stat">
@@ -937,8 +940,8 @@
     </div>
     <div class="stat-divider"></div>
     <div class="stat">
-      <div class="stat-num">SVS</div>
-      <div class="stat-label">WSI support</div>
+      <div class="stat-num">Auto</div>
+      <div class="stat-label">Full SVS parsing</div>
     </div>
     <div class="stat-divider"></div>
     <div class="stat">
@@ -973,9 +976,12 @@
     </div>
     <div class="app-card">
       <div class="app-card-icon">🔬</div>
-      <h3>H&amp;E Whole-Slide Imaging</h3>
-      <p>Processes standard image files or entire SVS whole-slide scans tiled across all available
-         CPU cores in parallel. No manual cropping or tile selection required.</p>
+      <h3>Full SVS Whole-Slide Auto-Parsing</h3>
+      <p>Koniscope automatically tiles and processes entire SVS whole-slide images
+         across all available CPU cores in parallel. A single full-resolution SVS scan
+         containing <strong style="color:var(--cyan)">16,000+ muscle fibers</strong> is detected,
+         segmented, and precisely marked with no manual cropping, no tile selection,
+         and no user intervention — just load the file and run.</p>
     </div>
     <div class="app-card">
       <div class="app-card-icon">⚡</div>
@@ -1069,6 +1075,80 @@
       </div>
     </div>
   </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- ── SVS Showcase ── -->
+<section id="svs" class="algo-section reveal">
+  <div class="section-label">Whole-Slide Intelligence</div>
+  <h2 class="section-title">16,000+ fibers. <span>One click.</span></h2>
+  <p class="section-body">
+    Koniscope's SVS engine automatically parses entire gigapixel whole-slide images
+    from end to end — no tile selection, no manual ROI drawing, no human input required
+    after pressing Run.
+  </p>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; background:var(--border); border:1px solid var(--border); margin-top:60px;">
+
+    <div style="background:var(--card); padding:40px 32px; position:relative; overflow:hidden;">
+      <div style="font-family:'Orbitron',sans-serif; font-size:48px; font-weight:900; color:var(--cyan); line-height:1; margin-bottom:16px; text-shadow:0 0 30px rgba(58,196,232,0.4);">16K+</div>
+      <div style="font-family:'Orbitron',sans-serif; font-size:12px; letter-spacing:0.08em; color:var(--white); margin-bottom:12px; text-transform:uppercase;">Fibers Per SVS Scan</div>
+      <p style="font-size:14px; color:var(--text2); line-height:1.7;">A single whole-slide SVS file can contain tens of thousands of individual muscle fibers. Koniscope detects and precisely outlines every one of them automatically.</p>
+    </div>
+
+    <div style="background:var(--card); padding:40px 32px;">
+      <div style="font-family:'Orbitron',sans-serif; font-size:48px; font-weight:900; color:var(--teal); line-height:1; margin-bottom:16px; text-shadow:0 0 30px rgba(42,232,196,0.4);">Auto</div>
+      <div style="font-family:'Orbitron',sans-serif; font-size:12px; letter-spacing:0.08em; color:var(--white); margin-bottom:12px; text-transform:uppercase;">Full Slide Parsing</div>
+      <p style="font-size:14px; color:var(--text2); line-height:1.7;">Koniscope automatically selects the correct pyramid level closest to 20&times; magnification, tiles the entire slide, and dispatches each tile to a parallel worker — fully hands-free.</p>
+    </div>
+
+    <div style="background:var(--card); padding:40px 32px;">
+      <div style="font-family:'Orbitron',sans-serif; font-size:48px; font-weight:900; color:var(--cyan2); line-height:1; margin-bottom:16px; text-shadow:0 0 30px rgba(93,212,240,0.4);">±µm</div>
+      <div style="font-family:'Orbitron',sans-serif; font-size:12px; letter-spacing:0.08em; color:var(--white); margin-bottom:12px; text-transform:uppercase;">Micron-Level Precision</div>
+      <p style="font-size:14px; color:var(--text2); line-height:1.7;">Every detected fiber is measured to sub-micron precision — diameter, area, circularity, aspect ratio, and solidity — using the scanner's native MPP (microns per pixel) calibration.</p>
+    </div>
+
+  </div>
+
+  <!-- SVS pipeline detail -->
+  <div style="margin-top:2px; background:var(--card); border:1px solid var(--border); border-top:none; padding:40px 48px;">
+    <div style="font-family:'Orbitron',sans-serif; font-size:13px; letter-spacing:0.06em; color:var(--cyan); margin-bottom:24px; text-transform:uppercase;">How SVS Auto-Parsing Works</div>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0; background:var(--border);">
+
+      <div style="background:var(--card2); padding:24px 20px; text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">①</div>
+        <div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">LOAD SVS</div>
+        <div style="font-size:12px; color:var(--text2); line-height:1.6;">OpenSlide reads the file and extracts pyramid metadata and MPP calibration</div>
+      </div>
+
+      <div style="background:var(--card2); padding:24px 20px; text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">②</div>
+        <div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">AUTO-LEVEL</div>
+        <div style="font-size:12px; color:var(--text2); line-height:1.6;">Automatically selects pyramid level closest to 20× — no manual zoom selection</div>
+      </div>
+
+      <div style="background:var(--card2); padding:24px 20px; text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">③</div>
+        <div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">TILE GRID</div>
+        <div style="font-size:12px; color:var(--text2); line-height:1.6;">Entire slide is divided into a grid of overlapping tiles covering every region</div>
+      </div>
+
+      <div style="background:var(--card2); padding:24px 20px; text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">④</div>
+        <div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">PARALLEL</div>
+        <div style="font-size:12px; color:var(--text2); line-height:1.6;">All tiles dispatched simultaneously across CPU cores via ProcessPoolExecutor</div>
+      </div>
+
+      <div style="background:var(--card2); padding:24px 20px; text-align:center;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--cyan); margin-bottom:10px;">⑤</div>
+        <div style="font-family:'Orbitron',sans-serif; font-size:11px; color:var(--white); margin-bottom:8px; letter-spacing:0.04em;">COMPILE</div>
+        <div style="font-size:12px; color:var(--text2); line-height:1.6;">Results merged into unified statistics, CSV export, and full morphometry dashboard</div>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <div class="full-divider"></div>
@@ -1244,7 +1324,7 @@
 <div id="contact" class="contact-section reveal">
   <h2>Contact &amp; Licensing</h2>
   <p>Questions, bug reports, licensing inquiries, and research collaborations:</p>
-  <a class="contact-email" href="mailto:gazkoniaris@icloud.com">gazkoniaris@icloud.com</a>
+  <a class="contact-email" href="/cdn-cgi/l/email-protection#8beceaf1e0e4e5e2eaf9e2f8cbe2e8e7e4feefa5e8e4e6"><span class="__cf_email__" data-cfemail="0661677c6d69686f67746f75466f656a6973622865696b">[email&#160;protected]</span></a>
 </div>
 
 <!-- ── Footer ── -->
@@ -1256,7 +1336,7 @@
 
 </div><!-- .wrap -->
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
@@ -1274,13 +1354,4 @@
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--cyan)' : '';
-    });
-  });
-</script>
-</body>
-</html>
+    sections.forEac
