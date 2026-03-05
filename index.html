@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --navy:   #060D1E;
     --dark:   #0A1428;
@@ -27,9 +26,7 @@
     --border: rgba(58,196,232,0.18);
     --red:    #E05C5C;
   }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--navy);
     color: var(--text);
@@ -38,8 +35,6 @@
     overflow-x: hidden;
     cursor: default;
   }
-
-  /* ── Starfield background ── */
   body::before {
     content: '';
     position: fixed;
@@ -61,8 +56,6 @@
     pointer-events: none;
     z-index: 0;
   }
-
-  /* ── Scan-line overlay ── */
   body::after {
     content: '';
     position: fixed;
@@ -77,10 +70,7 @@
     pointer-events: none;
     z-index: 1;
   }
-
   .wrap { position: relative; z-index: 2; }
-
-  /* ── Nav ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -94,14 +84,12 @@
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
-
   .nav-brand {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
   }
-
   .nav-logo {
     width: 34px; height: 34px;
     border-radius: 50%;
@@ -117,7 +105,6 @@
     font-weight: 700;
     color: var(--cyan);
   }
-
   .nav-name {
     font-family: 'Orbitron', sans-serif;
     font-size: 15px;
@@ -126,7 +113,6 @@
   }
   .nav-name span:first-child { color: var(--white); }
   .nav-name span:last-child  { color: var(--cyan); }
-
   .nav-links {
     display: flex;
     gap: 32px;
@@ -142,8 +128,6 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--cyan); }
-
-  /* ── Hero ── */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -155,7 +139,6 @@
     position: relative;
     gap: 0;
   }
-
   .hero-glow {
     position: absolute;
     width: 700px; height: 700px;
@@ -165,21 +148,17 @@
     transform: translate(-50%, -50%);
     pointer-events: none;
   }
-
   .logo-ring {
     position: relative;
     width: 180px; height: 180px;
     margin-bottom: 40px;
     animation: ring-pulse 4s ease-in-out infinite;
   }
-
   @keyframes ring-pulse {
     0%, 100% { filter: drop-shadow(0 0 18px rgba(58,196,232,0.5)); }
     50%       { filter: drop-shadow(0 0 36px rgba(58,196,232,0.9)); }
   }
-
   .logo-ring svg { width: 100%; height: 100%; }
-
   .hero-badge {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -190,7 +169,6 @@
     opacity: 0.8;
     animation: fadeUp 0.8s ease both;
   }
-
   .hero-title {
     font-family: 'Orbitron', sans-serif;
     font-size: clamp(52px, 8vw, 96px);
@@ -202,7 +180,6 @@
   }
   .hero-title .k { color: var(--white); }
   .hero-title .s { color: var(--cyan); text-shadow: 0 0 40px rgba(58,196,232,0.6); }
-
   .hero-sub {
     font-size: 18px;
     font-weight: 300;
@@ -212,7 +189,6 @@
     margin-bottom: 32px;
     animation: fadeUp 1s 0.2s ease both;
   }
-
   .hero-desc {
     max-width: 580px;
     font-size: 17px;
@@ -221,7 +197,6 @@
     margin-bottom: 52px;
     animation: fadeUp 1s 0.3s ease both;
   }
-
   .hero-buttons {
     display: flex;
     gap: 16px;
@@ -229,7 +204,6 @@
     flex-wrap: wrap;
     animation: fadeUp 1s 0.4s ease both;
   }
-
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -260,7 +234,6 @@
   }
   .btn-primary:hover::before { transform: translateX(0); }
   .btn-primary:hover { box-shadow: 0 0 28px rgba(58,196,232,0.6); }
-
   .btn-secondary {
     display: inline-flex;
     align-items: center;
@@ -283,7 +256,6 @@
     background: rgba(58,196,232,0.08);
     box-shadow: 0 0 20px rgba(58,196,232,0.2);
   }
-
   .hero-stat-strip {
     position: relative;
     display: flex;
@@ -293,7 +265,6 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .stat { text-align: center; }
   .stat-num {
     font-family: 'Orbitron', sans-serif;
@@ -315,14 +286,11 @@
     background: var(--border);
     align-self: center;
   }
-
-  /* ── Section common ── */
   section {
     padding: 100px 40px;
     max-width: 1200px;
     margin: 0 auto;
   }
-
   .section-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -340,7 +308,6 @@
     width: 32px; height: 1px;
     background: var(--cyan);
   }
-
   .section-title {
     font-family: 'Orbitron', sans-serif;
     font-size: clamp(28px, 4vw, 46px);
@@ -350,7 +317,6 @@
     line-height: 1.1;
   }
   .section-title span { color: var(--cyan); }
-
   .section-body {
     font-size: 16px;
     line-height: 1.8;
@@ -358,8 +324,6 @@
     max-width: 640px;
     margin-bottom: 60px;
   }
-
-  /* ── Application section ── */
   .app-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -368,7 +332,6 @@
     border: 1px solid var(--border);
     margin-top: 60px;
   }
-
   .app-card {
     background: var(--card);
     padding: 48px 40px;
@@ -388,7 +351,6 @@
     transition: transform 0.3s;
   }
   .app-card:hover::after { transform: scaleY(1); }
-
   .app-card-icon {
     width: 48px; height: 48px;
     border: 1px solid var(--border);
@@ -398,7 +360,6 @@
     color: var(--cyan);
     background: rgba(58,196,232,0.06);
   }
-
   .app-card h3 {
     font-family: 'Orbitron', sans-serif;
     font-size: 14px;
@@ -407,22 +368,17 @@
     letter-spacing: 0.06em;
     margin-bottom: 14px;
   }
-
   .app-card p {
     font-size: 15px;
     line-height: 1.75;
     color: var(--text2);
   }
-
-  /* ── Algorithm section ── */
   .algo-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 40px;
   }
-
   .algo-pipeline { margin-top: 60px; position: relative; }
-
   .pipeline-step {
     display: grid;
     grid-template-columns: 80px 1fr;
@@ -430,7 +386,6 @@
     margin-bottom: 2px;
     position: relative;
   }
-
   .step-num {
     background: var(--card);
     border: 1px solid var(--border);
@@ -447,7 +402,6 @@
     transition: background 0.3s;
   }
   .pipeline-step:hover .step-num { background: rgba(58,196,232,0.12); }
-
   .step-content {
     background: var(--card);
     border: 1px solid var(--border);
@@ -459,7 +413,6 @@
     transition: background 0.3s;
   }
   .pipeline-step:hover .step-content { background: var(--card2); }
-
   .step-content h4 {
     font-family: 'Orbitron', sans-serif;
     font-size: 13px;
@@ -469,13 +422,11 @@
     margin-bottom: 6px;
     min-width: 240px;
   }
-
   .step-content p {
     font-size: 14px;
     color: var(--text2);
     line-height: 1.6;
   }
-
   .step-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -487,14 +438,11 @@
     white-space: nowrap;
     margin-left: auto;
   }
-
-  /* ── Formats section ── */
   .formats-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 40px;
   }
-
   .format-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -503,7 +451,6 @@
     border: 1px solid var(--border);
     margin-top: 60px;
   }
-
   .format-card {
     background: var(--card);
     padding: 32px 24px;
@@ -518,7 +465,6 @@
     position: relative;
     box-shadow: 0 8px 32px rgba(0,0,0,0.4);
   }
-
   .format-ext {
     font-family: 'JetBrains Mono', monospace;
     font-size: 20px;
@@ -526,13 +472,11 @@
     color: var(--cyan);
     margin-bottom: 8px;
   }
-
   .format-name {
     font-size: 12px;
     color: var(--text2);
     letter-spacing: 0.05em;
   }
-
   .format-badge {
     display: inline-block;
     margin-top: 10px;
@@ -543,23 +487,18 @@
     color: var(--cyan);
     letter-spacing: 0.08em;
   }
-
-  /* ── Stain profiles ── */
   .stains-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 40px;
   }
-
   .stain-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 60px;
     border: 1px solid var(--border);
   }
-
   .stain-table thead { background: var(--card2); }
-
   .stain-table th {
     padding: 16px 24px;
     text-align: left;
@@ -570,19 +509,16 @@
     color: var(--cyan);
     border-bottom: 1px solid var(--border);
   }
-
   .stain-table td {
     padding: 18px 24px;
     font-size: 14px;
     color: var(--text2);
     border-bottom: 1px solid rgba(58,196,232,0.07);
   }
-
   .stain-table tr:last-child td { border-bottom: none; }
   .stain-table tbody tr { transition: background 0.2s; }
   .stain-table tbody tr:hover { background: rgba(58,196,232,0.04); }
   .stain-table td:first-child { color: var(--white); font-weight: 400; }
-
   .mode-tag {
     display: inline-block;
     font-family: 'JetBrains Mono', monospace;
@@ -594,14 +530,11 @@
   .mode-hema     { background: rgba(160,80,240,0.12); color: #C080F0; }
   .mode-blackhat { background: rgba(240,180,60,0.12); color: #F0C060; }
   .mode-trichrome{ background: rgba(240,80,80,0.12);  color: #F08080; }
-
-  /* ── Use case ── */
   .usecase-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 40px;
   }
-
   .usecase-card {
     border: 1px solid var(--border);
     background: var(--card);
@@ -609,7 +542,6 @@
     position: relative;
     overflow: hidden;
   }
-
   .usecase-card::before {
     content: '';
     position: absolute;
@@ -617,7 +549,6 @@
     width: 100%; height: 4px;
     background: linear-gradient(90deg, var(--cyan), var(--teal), transparent);
   }
-
   .usecase-quote {
     font-size: 18px;
     line-height: 1.85;
@@ -627,11 +558,8 @@
     font-style: italic;
     font-weight: 300;
   }
-
   .usecase-meta { display: flex; gap: 48px; flex-wrap: wrap; }
-
   .meta-item { border-left: 2px solid var(--cyan); padding-left: 20px; }
-
   .meta-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -640,16 +568,12 @@
     color: var(--cyan);
     margin-bottom: 6px;
   }
-
   .meta-value { font-size: 14px; color: var(--white); font-weight: 400; }
-
-  /* ── License section ── */
   .license-section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 100px 40px;
   }
-
   .license-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -658,9 +582,7 @@
     border: 1px solid var(--border);
     margin-top: 60px;
   }
-
   .license-card { background: var(--card); padding: 40px 32px; }
-
   .license-card h3 {
     font-family: 'Orbitron', sans-serif;
     font-size: 12px;
@@ -669,11 +591,8 @@
     margin-bottom: 16px;
     text-transform: uppercase;
   }
-
   .license-card p { font-size: 14px; line-height: 1.75; color: var(--text2); }
   .license-card .icon { font-size: 28px; margin-bottom: 20px; display: block; }
-
-  /* ── Pricing section ── */
   .pricing-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -682,7 +601,6 @@
     border: 1px solid var(--border);
     margin-top: 60px;
   }
-
   .pricing-card {
     background: var(--card);
     padding: 40px 36px;
@@ -691,13 +609,11 @@
     transition: background 0.3s;
   }
   .pricing-card:hover { background: var(--card2); }
-
   .pricing-accent {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 3px;
   }
-
   .pricing-tier {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -705,7 +621,6 @@
     text-transform: uppercase;
     margin-bottom: 16px;
   }
-
   .pricing-price {
     font-family: 'Orbitron', sans-serif;
     font-size: 48px;
@@ -714,7 +629,6 @@
     line-height: 1;
     margin-bottom: 8px;
   }
-
   .pricing-term {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -722,7 +636,6 @@
     letter-spacing: 0.1em;
     margin-bottom: 28px;
   }
-
   .pricing-features {
     list-style: none;
     border-top: 1px solid var(--border);
@@ -731,7 +644,6 @@
     flex-direction: column;
     gap: 12px;
   }
-
   .pricing-features li {
     font-size: 14px;
     color: var(--text2);
@@ -740,9 +652,7 @@
     align-items: flex-start;
     line-height: 1.5;
   }
-
   .check { flex-shrink: 0; margin-top: 1px; }
-
   .pricing-note {
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
@@ -754,15 +664,12 @@
   }
   .pricing-note a { color: var(--cyan); text-decoration: none; }
   .pricing-note a:hover { text-decoration: underline; }
-
-  /* ── Contact / Footer ── */
   .contact-section {
     border-top: 1px solid var(--border);
     background: var(--dark);
     padding: 100px 40px 60px;
     text-align: center;
   }
-
   .contact-section h2 {
     font-family: 'Orbitron', sans-serif;
     font-size: clamp(24px, 3vw, 40px);
@@ -770,9 +677,7 @@
     color: var(--white);
     margin-bottom: 16px;
   }
-
   .contact-section p { font-size: 16px; color: var(--text2); margin-bottom: 40px; }
-
   .contact-email {
     font-family: 'JetBrains Mono', monospace;
     font-size: 16px;
@@ -783,7 +688,6 @@
     transition: border-color 0.2s;
   }
   .contact-email:hover { border-color: var(--cyan); }
-
   footer {
     padding: 32px 40px;
     border-top: 1px solid var(--border);
@@ -792,12 +696,10 @@
     justify-content: space-between;
     background: var(--navy);
   }
-
   footer .brand { font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700; }
   footer .brand span:first-child { color: var(--white); }
   footer .brand span:last-child  { color: var(--cyan); }
   footer .copy { font-size: 12px; color: var(--text2); letter-spacing: 0.04em; }
-
   footer .closed {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -807,29 +709,22 @@
     border: 1px solid rgba(224,92,92,0.3);
     padding: 4px 12px;
   }
-
-  /* ── Divider ── */
   .full-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
     max-width: 1200px;
     margin: 0 auto;
   }
-
-  /* ── Animations ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
   .reveal {
     opacity: 0;
     transform: translateY(32px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  /* ── Hamburger button ── */
   .nav-hamburger {
     display: none;
     flex-direction: column;
@@ -849,7 +744,6 @@
   .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-hamburger.open span:nth-child(2) { opacity: 0; }
   .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
   .mobile-nav {
     display: none;
     position: fixed;
@@ -875,13 +769,10 @@
   }
   .mobile-nav a:hover { color: var(--cyan); background: rgba(58,196,232,0.04); }
   .mobile-nav a:last-child { border-bottom: none; }
-
-  /* ── Responsive ── */
   @media (min-width: 1280px) {
     section, .algo-section, .formats-section, .stains-section,
     .usecase-section, .license-section { padding: 100px 40px; }
   }
-
   @media (max-width: 1024px) {
     section, .algo-section, .formats-section, .stains-section,
     .usecase-section, .license-section { padding: 80px 32px; }
@@ -890,18 +781,14 @@
     .usecase-card { padding: 48px 40px; }
     .license-grid { grid-template-columns: repeat(3, 1fr); }
   }
-
   @media (max-width: 768px) {
     nav { padding: 0 20px; }
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
-
     section, .algo-section, .formats-section, .stains-section,
     .usecase-section, .license-section { padding: 64px 20px; }
-
     .hero { padding: 100px 20px 100px; }
     .logo-ring { width: 140px; height: 140px; }
-
     .hero-stat-strip {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -915,35 +802,26 @@
     .stat { background: var(--card); padding: 20px 16px; }
     .stat-divider { display: none; }
     .stat-num { font-size: 24px; }
-
     .app-grid { grid-template-columns: 1fr; }
     .app-card { padding: 32px 24px; }
-
     .pipeline-step { grid-template-columns: 52px 1fr; gap: 0 12px; }
     .step-content { padding: 20px 16px; flex-direction: column; align-items: flex-start; gap: 10px; }
     .step-content h4 { min-width: unset; }
     .step-tag { margin-left: 0; }
-
     .format-grid { grid-template-columns: repeat(2, 1fr); }
-
     .stain-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .stain-table { min-width: 520px; }
-
     .usecase-card { padding: 32px 20px; }
     .usecase-quote { font-size: 15px; }
     .usecase-meta { flex-direction: column; gap: 20px; }
-
     .license-grid { grid-template-columns: 1fr; }
     .pricing-grid { grid-template-columns: 1fr; }
-
     .contact-section { padding: 60px 20px 48px; }
     footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 20px; }
-
     .svs-grid-3 { grid-template-columns: 1fr !important; }
     .svs-grid-5 { grid-template-columns: repeat(2, 1fr) !important; }
     .stats-grid-6 { grid-template-columns: repeat(3, 1fr) !important; }
   }
-
   @media (max-width: 480px) {
     nav { padding: 0 16px; }
     section, .algo-section, .formats-section, .stains-section,
@@ -967,7 +845,6 @@
     footer { padding: 20px 16px; }
     .pricing-price { font-size: 40px; }
   }
-
   @media (max-width: 360px) {
     .hero-title { font-size: 42px; }
     .stats-grid-6 { grid-template-columns: repeat(2, 1fr) !important; }
@@ -978,8 +855,6 @@
 </head>
 <body>
 <div class="wrap">
-
-<!-- ── Nav ── -->
 <nav>
   <a class="nav-brand" href="#">
     <div class="nav-logo">K</div>
@@ -1009,8 +884,6 @@
   <a href="#license">License</a>
   <a href="#contact">Contact</a>
 </nav>
-
-<!-- ── Hero ── -->
 <div class="hero">
   <div class="hero-glow"></div>
   <div class="logo-ring">
@@ -1048,7 +921,6 @@
             font-size="28" font-weight="700" fill="white" opacity="0.92">K</text>
     </svg>
   </div>
-
   <div class="hero-badge">Automated Histological Segmentation · v2.0</div>
   <h1 class="hero-title"><span class="k">KONI</span><span class="s">SCOPE</span></h1>
   <div class="hero-sub">Muscle Fiber Analysis Suite</div>
@@ -1058,12 +930,10 @@
     precisely marking <strong style="color:var(--cyan)">16,000+ individual fibers</strong>
     across a full whole-slide SVS scan — fully automated, no manual input required.
   </p>
-
   <div class="hero-buttons">
-    <a class="btn-primary" href="https://www.dropbox.com/scl/fi/wfucwp1fl1n2uvhq41cv5/Koniscope.zip?rlkey=m4qolw4wbjggpilsuhhbtlzma&st=58vje9fp&dl=1" target="_blank">↓ &nbsp;Download</a>
+    <a class="btn-primary" id="downloadBtn" href="https://www.dropbox.com/scl/fi/wfucwp1fl1n2uvhq41cv5/Koniscope.zip?rlkey=m4qolw4wbjggpilsuhhbtlzma&st=58vje9fp&dl=1" target="_blank">↓ &nbsp;Download</a>
     <a class="btn-secondary" href="https://github.com/Ge0rge-K" target="_blank">⬡ &nbsp;View on GitHub</a>
   </div>
-
   <div class="hero-stat-strip">
     <div class="stat"><div class="stat-num">16,000+</div><div class="stat-label">Fibers per SVS slide</div></div>
     <div class="stat-divider"></div>
@@ -1074,8 +944,6 @@
     <div class="stat"><div class="stat-num">v2.0</div><div class="stat-label">Rebuilt engine</div></div>
   </div>
 </div>
-
-<!-- ── Screenshot Showcase ── -->
 <section id="showcase" style="max-width:1200px; margin:0 auto; padding:80px 40px 40px;" class="reveal">
   <div class="section-label">Live Analysis — Real Results</div>
   <h2 class="section-title">See it <span>in action</span></h2>
@@ -1103,10 +971,7 @@
     Sample: UME_MEC22084_Peduncle_Muscle.svs &nbsp;·&nbsp; H&amp;E (Standard) &nbsp;·&nbsp; Scale 0.5 µm/px (20× equivalent) &nbsp;·&nbsp; 7 tiles processed in parallel
   </p>
 </section>
-
 <div class="full-divider"></div>
-
-<!-- ── Application ── -->
 <section id="application" class="reveal">
   <div class="section-label">Real-World Application</div>
   <h2 class="section-title">Built for<br/><span>active research</span></h2>
@@ -1134,10 +999,7 @@
     </div>
   </div>
 </section>
-
 <div class="full-divider"></div>
-
-<!-- ── Algorithm ── -->
 <section id="algorithm" class="algo-section reveal">
   <div class="section-label">Segmentation Engine v2.0</div>
   <h2 class="section-title">7-step <span>detection pipeline</span></h2>
@@ -1173,15 +1035,11 @@
     </div>
   </div>
 </section>
-
 <div class="full-divider"></div>
-
-<!-- ── SVS Showcase ── -->
 <section id="svs" class="algo-section reveal">
   <div class="section-label">Whole-Slide Intelligence</div>
   <h2 class="section-title">16,000+ fibers. <span>One click.</span></h2>
   <p class="section-body">Koniscope's SVS engine automatically parses entire gigapixel whole-slide images from end to end — no tile selection, no manual ROI drawing, no human input required after pressing Run.</p>
-
   <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; background:var(--border); border:1px solid var(--border); margin-top:60px;" class="svs-grid-3">
     <div style="background:var(--card); padding:40px 32px; position:relative; overflow:hidden;">
       <div style="font-family:'Orbitron',sans-serif; font-size:48px; font-weight:900; color:var(--cyan); line-height:1; margin-bottom:16px; text-shadow:0 0 30px rgba(58,196,232,0.4);">16K+</div>
@@ -1199,7 +1057,6 @@
       <p style="font-size:14px; color:var(--text2); line-height:1.7;">Every detected fiber is measured to sub-micron precision — diameter, area, circularity, aspect ratio, and solidity — using the scanner's native MPP (microns per pixel) calibration.</p>
     </div>
   </div>
-
   <div style="margin-top:2px; background:var(--card); border:1px solid var(--border); border-top:none; padding:40px 48px;">
     <div style="font-family:'Orbitron',sans-serif; font-size:13px; letter-spacing:0.06em; color:var(--cyan); margin-bottom:24px; text-transform:uppercase;">How SVS Auto-Parsing Works</div>
     <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0; background:var(--border);" class="svs-grid-5">
@@ -1211,10 +1068,7 @@
     </div>
   </div>
 </section>
-
 <div class="full-divider"></div>
-
-<!-- ── Formats ── -->
 <section id="formats" class="formats-section reveal">
   <div class="section-label">Supported Formats</div>
   <h2 class="section-title">Images &amp; <span>whole slides</span></h2>
@@ -1230,10 +1084,7 @@
     <div class="format-card"><div class="format-ext">.mrxs</div><div class="format-name">3DHISTECH</div><div class="format-badge">WSI · Pannoramic</div></div>
   </div>
 </section>
-
 <div class="full-divider"></div>
-
-<!-- ── Stain profiles ── -->
 <section id="stains" class="stains-section reveal">
   <div class="section-label">Detection Profiles</div>
   <h2 class="section-title">7 stain <span>profiles</span></h2>
@@ -1253,10 +1104,7 @@
   </table>
   </div>
 </section>
-
 <div class="full-divider"></div>
-
-<!-- ── Use case highlight ── -->
 <section class="usecase-section reveal">
   <div class="section-label">Scientific Use</div>
   <h2 class="section-title">Florida <span>manatee research</span></h2>
@@ -1270,15 +1118,11 @@
     </div>
   </div>
 </section>
-
 <div class="full-divider"></div>
-
-<!-- ── Pricing ── -->
 <section id="pricing" class="license-section reveal">
   <div class="section-label">Licensing &amp; Pricing</div>
   <h2 class="section-title">Simple <span>transparent pricing</span></h2>
   <p class="section-body">One-time license fees for academic and animal research institutions. No subscriptions, no hidden costs.</p>
-
   <div class="pricing-grid">
     <div class="pricing-card">
       <div class="pricing-accent" style="background:linear-gradient(90deg,var(--cyan),transparent);"></div>
@@ -1333,16 +1177,12 @@
       </ul>
     </div>
   </div>
-
   <p class="pricing-note">
     All licenses include a license key activation system. For custom institutional pricing contact
     <a href="mailto:gazkoniaris@icloud.com">gazkoniaris@icloud.com</a>
   </p>
 </section>
-
 <div class="full-divider"></div>
-
-<!-- ── License ── -->
 <section id="license" class="license-section reveal">
   <div class="section-label">Licensing</div>
   <h2 class="section-title">Closed source &amp;<br/><span>proprietary</span></h2>
@@ -1353,23 +1193,17 @@
     <div class="license-card"><span class="icon">©</span><h3>All Rights Reserved</h3><p>Copyright © 2026 George Alekos Zimmers Koniaris. Protected under the DMCA, U.S. Copyright Act, and the Berne Convention. All unauthorized use is prohibited.</p></div>
   </div>
 </section>
-
-<!-- ── Contact ── -->
 <div id="contact" class="contact-section reveal">
   <h2>Contact &amp; Licensing</h2>
   <p>Questions, bug reports, licensing inquiries, and research collaborations:</p>
   <a class="contact-email" href="mailto:gazkoniaris@icloud.com">gazkoniaris@icloud.com</a>
 </div>
-
-<!-- ── Footer ── -->
 <footer>
   <div class="brand"><span>KONI</span><span>SCOPE</span></div>
   <div class="copy">© 2026 George Alekos Zimmers Koniaris · All Rights Reserved</div>
   <div class="closed">Closed Source</div>
 </footer>
-
-</div><!-- .wrap -->
-
+</div>
 <script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
@@ -1378,7 +1212,6 @@
     });
   }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
-
   const hamburger = document.getElementById('navHamburger');
   const mobileNav = document.getElementById('mobileNav');
   hamburger.addEventListener('click', () => {
@@ -1391,7 +1224,6 @@
       mobileNav.classList.remove('open');
     });
   });
-
   const sections = document.querySelectorAll('section[id], div[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
@@ -1399,6 +1231,19 @@
     sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id'); });
     navLinks.forEach(l => { l.style.color = ''; if (l.getAttribute('href') === '#' + current) l.style.color = 'var(--cyan)'; });
   });
+
+  // OS-aware download button
+  (function() {
+    const btn = document.getElementById('downloadBtn');
+    const isMac = /Mac/i.test(navigator.platform) ||
+                  navigator.userAgentData?.platform === 'macOS';
+    if (isMac) {
+      btn.href = 'https://www.dropbox.com/scl/fi/1440rcwls25d5z52ejwpg/Koniscope_mac.zip?rlkey=0y9uz0e8bjqkcl8w3mf8j9w4t&st=xbjya2o8&dl=1';
+      btn.innerHTML = '↓ &nbsp;Download for Mac';
+    } else {
+      btn.innerHTML = '↓ &nbsp;Download for Windows';
+    }
+  })();
 </script>
 </body>
 </html>
